@@ -118,6 +118,17 @@
       font-weight: 700;
     }
 
+    /* Mobile Menu Styles */
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: .5rem;
+    }
+
     .hero {
       background:
         radial-gradient(circle at 80% 20%, rgba(47,127,131,.18), transparent 32%),
@@ -313,26 +324,82 @@
     .portfolio-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 1.1rem;
+      gap: 1.5rem;
     }
 
-    .portfolio-card {
+    .portfolio-item {
       background: var(--white);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 1.45rem;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 7px 20px rgba(24,34,55,.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .portfolio-card .number {
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-img-wrap {
+      width: 100%;
+      height: 340px;
+      background: #f0f3f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .portfolio-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .portfolio-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .portfolio-tag {
       color: var(--teal);
       font-size: .8rem;
-      font-weight: 900;
-      letter-spacing: .1em;
-      margin-bottom: .55rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .4rem;
     }
 
-    .portfolio-card h3 { margin-bottom: .45rem; }
-    .portfolio-card p { color: var(--muted); margin: 0; }
+    .portfolio-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+
+    .portfolio-content p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-size: .95rem;
+      flex-grow: 1;
+    }
+
+    .portfolio-link {
+      color: var(--teal-dark);
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
 
     .promise {
       background: var(--navy);
@@ -406,7 +473,36 @@
       .hero { padding: 5rem 0 4rem; }
       .service-grid { grid-template-columns: 1fr; }
       .portfolio-grid { grid-template-columns: 1fr; }
-      .nav-links { display: none; }
+
+      .portfolio-img-wrap {
+        height: 280px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-2);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-bottom: 2px solid var(--teal);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: inline-block;
+        text-align: center;
+      }
     }
 
     @media (max-width: 600px) {
@@ -433,8 +529,11 @@
         <span>Computer • Website • Digital Help</span>
       </a>
 
-      <nav class="nav-links" aria-label="Main navigation">
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#services">Services</a>
+        <a href="#portfolio">Portfolio</a>
         <a href="#prices">Prices</a>
         <a href="#work">What I can do</a>
         <a class="nav-cta" href="#contact">Get in touch</a>
@@ -621,7 +720,64 @@
       </div>
     </section>
 
-    <section id="prices">
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Recent Work & Portfolio</h2>
+          <p>
+            Examples of print-ready designs and live website projects designed and developed for clients.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <!-- A6 Leaflet -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="A6-Terry-001e.jpg" alt="Terry's Outdoor and Property Maintenance Services A6 Leaflet Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>A6 Promotional Leaflet</h3>
+              <p>Eye-catching promotional flyer design for outdoor and property maintenance services, structured with clear service highlights and contact CTA.</p>
+            </div>
+          </article>
+
+          <!-- Business Card -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="Business-card-003.jpeg" alt="Terry's Outdoor & Property Maintenance Business Card Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>Business Card Design</h3>
+              <p>Clean, professional double-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
+            </div>
+          </article>
+
+          <!-- Website Example -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <svg width="100" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Web Design & Build</span>
+              <h3>Leeza Cook - Professional Violinist</h3>
+              <p>A sleek, elegant responsive website created for professional violinist Leeza Cook, highlighting performances, sound clips, and bookings.</p>
+              <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                Visit Website &rarr;
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="alt">
       <div class="container">
         <div class="section-heading">
           <h2>Introductory prices</h2>
@@ -654,7 +810,7 @@
       </div>
     </section>
 
-    <section class="alt" id="work">
+    <section id="work">
       <div class="container">
         <div class="section-heading">
           <h2>What I can help you with</h2>
@@ -751,5 +907,22 @@
       <div><a href="#top">Back to top</a></div>
     </div>
   </footer>
+
+  <script>
+    // Toggle Mobile Navigation Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link on mobile
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
