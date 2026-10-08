@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Friendly, practical computer, website and digital support for individuals and small businesses in Suffolk and online.">
+  <meta name="theme-color" content="#243047">
+  <title>Practical Digital & Computer Support | Suffolk & Online</title>
+
+  <style>
+    :root {
+      --navy: #243047;
+      --navy-2: #182237;
+      --teal: #2f7f83;
+      --teal-dark: #24666a;
+      --cream: #f7f4ee;
+      --white: #ffffff;
+      --ink: #202733;
+      --muted: #5e6878;
+      --line: #dfe4e9;
+      --soft: #eef4f3;
+      --shadow: 0 14px 35px rgba(24, 34, 55, .10);
+      --radius: 16px;
+      --max: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--white);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+    img { max-width: 100%; height: auto; }
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #e0a84f;
+      outline-offset: 3px;
+      border-radius: 5px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      background: var(--white);
+      color: var(--navy);
+      padding: .7rem 1rem;
+      z-index: 1000;
+      border-radius: 0 0 8px 8px;
+      font-weight: 700;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 18px rgba(0,0,0,.12);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 1.1rem;
+    }
+
+    .brand span {
+      display: block;
+      font-size: .76rem;
+      font-weight: 500;
+      opacity: .8;
+      letter-spacing: .04em;
+      margin-top: -.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+      font-size: .95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: .92;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      background: var(--teal);
+      padding: .55rem .9rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero {
+      background:
+        radial-gradient(circle at 80% 20%, rgba(47,127,131,.18), transparent 32%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--white);
+      padding: 6.5rem 0 5.5rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 4rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      color: #bde2e1;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+      font-size: .78rem;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 6vw, 4.6rem);
+      margin-bottom: 1.35rem;
+      max-width: 800px;
+    }
+
+    .hero p {
+      color: #e5eaf2;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin-bottom: 1.8rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: .7rem 1.1rem;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid transparent;
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .button-primary:hover { background: var(--teal-dark); }
+
+    .button-secondary {
+      border-color: rgba(255,255,255,.45);
+      color: var(--white);
+    }
+
+    .button-secondary:hover { background: rgba(255,255,255,.08); }
+
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 1.7rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h2 { font-size: 1.2rem; margin-bottom: .75rem; }
+    .hero-card ul { margin: 0; padding-left: 1.15rem; color: #edf1f6; }
+    .hero-card li + li { margin-top: .55rem; }
+
+    section { padding: 5rem 0; }
+    section.alt { background: var(--cream); }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 2.3rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .75rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .intro-card, .service-card, .price-card, .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      padding: 1.6rem;
+    }
+
+    .intro-card h3 { font-size: 1.2rem; margin-bottom: .55rem; }
+    .intro-card p { color: var(--muted); margin: 0; }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
+
+    .service-card {
+      box-shadow: 0 7px 20px rgba(24,34,55,.05);
+    }
+
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: .35rem;
+    }
+
+    .price {
+      color: var(--teal-dark);
+      font-size: 1.25rem;
+      font-weight: 850;
+      margin: .35rem 0 .8rem;
+    }
+
+    .service-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
+
+    .service-card li + li { margin-top: .25rem; }
+
+    .highlight {
+      margin-top: 1.4rem;
+      padding: 1.2rem 1.35rem;
+      border-left: 5px solid var(--teal);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .highlight strong { color: var(--navy); }
+
+    .price-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      min-width: 540px;
+    }
+
+    th, td {
+      padding: 1rem 1.1rem;
+      text-align: left;
+      border-bottom: 1px solid var(--line);
+    }
+
+    th {
+      background: var(--navy);
+      color: var(--white);
+      font-size: .92rem;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    td:last-child { font-weight: 800; color: var(--teal-dark); white-space: nowrap; }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.1rem;
+    }
+
+    .portfolio-card {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.45rem;
+    }
+
+    .portfolio-card .number {
+      color: var(--teal);
+      font-size: .8rem;
+      font-weight: 900;
+      letter-spacing: .1em;
+      margin-bottom: .55rem;
+    }
+
+    .portfolio-card h3 { margin-bottom: .45rem; }
+    .portfolio-card p { color: var(--muted); margin: 0; }
+
+    .promise {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .promise h2 { font-size: 2.1rem; }
+    .promise p { color: #e1e7ef; margin: 0; }
+    .promise ul { margin: 0; padding-left: 1.2rem; color: #e1e7ef; }
+    .promise li + li { margin-top: .5rem; }
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 2rem;
+    }
+
+    .contact-card h2 { font-size: 2rem; }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem 0 0;
+    }
+
+    .contact-list li + li { margin-top: .8rem; }
+
+    .contact-list a {
+      color: var(--teal-dark);
+      font-weight: 750;
+    }
+
+    .small {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--navy-2);
+      color: #dbe1ea;
+      padding: 2rem 0;
+      font-size: .88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: #dbe1ea; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .promise, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 5rem 0 4rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 3.7rem 0; }
+      .intro-grid { grid-template-columns: 1fr; }
+      .hero-card { margin-top: .5rem; }
+      .promise { padding: 2rem; }
+      h1 { font-size: 2.65rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Practical Digital and Computer Support home">
+        Practical Digital Support
+        <span>Computer • Website • Digital Help</span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#prices">Prices</a>
+        <a href="#work">What I can do</a>
+        <a class="nav-cta" href="#contact">Get in touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Suffolk & online</span>
+          <h1>Technology shouldn't get in the way of running your business.</h1>
+          <p>
+            Friendly, practical help with computers, websites and the everyday digital jobs
+            that small businesses and individuals don't always have time — or the patience —
+            to sort out themselves.
+          </p>
+
+          <div class="buttons">
+            <a class="button button-primary" href="#contact">Ask for help</a>
+            <a class="button button-secondary" href="#prices">See prices</a>
+          </div>
+        </div>
+
+        <aside class="hero-card" aria-label="What I help with">
+          <h2>Practical help. No jargon.</h2>
+          <ul>
+            <li>Computer and device problems</li>
+            <li>Website updates and small changes</li>
+            <li>Simple business websites</li>
+            <li>Business cards, flyers and print-ready artwork</li>
+            <li>Online booking and digital admin</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I do</h2>
+          <p>
+            I provide straightforward digital support for people who want something
+            sorted without having to become a computer expert themselves.
+          </p>
+        </div>
+
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>For small businesses</h3>
+            <p>
+              Keep your website, digital information and printed materials looking
+              professional and up to date — without the cost or complexity of a large agency.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <h3>For individuals</h3>
+            <p>
+              Get practical help with computers, phones, software, email, printers,
+              files and other everyday technology problems.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="services">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Services</h2>
+          <p>
+            Most small jobs are straightforward. Where a job is larger, I'll agree
+            the scope and price with you before starting.
+          </p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Computer & Technology Help</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>PC and laptop setup</li>
+              <li>Software installation and configuration</li>
+              <li>Email, printer and Wi-Fi problems</li>
+              <li>Smartphone and tablet assistance</li>
+              <li>File organisation and backups</li>
+              <li>General troubleshooting</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Updates</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>Change text and images</li>
+              <li>Add events, services or sections</li>
+              <li>Update links and contact information</li>
+              <li>Photograph and media updates</li>
+              <li>Small layout changes</li>
+              <li>General website tidy-ups</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Small Website Changes</h3>
+            <div class="price">From £40</div>
+            <ul>
+              <li>Fixed-price work where the job is clearly defined</li>
+              <li>New sections or service information</li>
+              <li>Events and calendar additions</li>
+              <li>Multiple small amendments</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Simple Business Website</h3>
+            <div class="price">From £400</div>
+            <ul>
+              <li>Modern, mobile-friendly design</li>
+              <li>Home, About and Services sections</li>
+              <li>Gallery and contact information</li>
+              <li>Enquiry/contact form</li>
+              <li>Social-media links</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Care</h3>
+            <div class="price">£40 per month</div>
+            <ul>
+              <li>Minor text and image changes</li>
+              <li>Small content updates</li>
+              <li>General website assistance</li>
+              <li>Up to 1 hour of minor changes per month</li>
+              <li>Larger changes quoted separately</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Business Cards & Print Design</h3>
+            <div class="price">From £35</div>
+            <ul>
+              <li>Business card design</li>
+              <li>Flyers, leaflets and posters</li>
+              <li>Professional layout</li>
+              <li>Print-ready artwork supplied</li>
+              <li>Printing charged separately</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Digital Business Support</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>Online booking systems</li>
+              <li>Google services</li>
+              <li>Online forms</li>
+              <li>Basic spreadsheets</li>
+              <li>Website and social-media assistance</li>
+              <li>General “How do I do this?” problems</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Something else?</h3>
+            <div class="price">Just ask</div>
+            <ul>
+              <li>If it's computer-related, I may be able to help.</li>
+              <li>I'll explain what is involved.</li>
+              <li>You'll know the cost before substantial work begins.</li>
+              <li>No complicated quotation process.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight">
+          <strong>No surprise bills.</strong>
+          For small jobs I'll tell you the price before starting. If a job becomes
+          substantially bigger than expected, I'll explain the situation before doing
+          additional work.
+        </div>
+      </div>
+    </section>
+
+    <section id="prices">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Introductory prices</h2>
+          <p>
+            Simple pricing while I build my customer base. Third-party costs such as
+            hosting, domains, printing and paid software are not included unless stated.
+          </p>
+        </div>
+
+        <div class="price-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Introductory price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Computer / technology help</td><td>£30/hour</td></tr>
+              <tr><td>Website updates</td><td>£30/hour</td></tr>
+              <tr><td>Digital business support</td><td>£30/hour</td></tr>
+              <tr><td>Business card design</td><td>From £35</td></tr>
+              <tr><td>Flyer / leaflet / poster design</td><td>From £45</td></tr>
+              <tr><td>Small website changes</td><td>From £40</td></tr>
+              <tr><td>Website maintenance</td><td>£40/month</td></tr>
+              <tr><td>Simple business website</td><td>From £400</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section class="alt" id="work">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I can help you with</h2>
+          <p>
+            A few examples of the sort of practical work this service is designed for.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <div class="number">01</div>
+            <h3>Websites</h3>
+            <p>
+              Build a simple site for a local business, or keep an existing site
+              updated as services, photographs and information change.
+            </p>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="number">02</div>
+            <h3>Printed materials</h3>
+            <p>
+              Turn your business information into clean, professional business cards,
+              flyers, leaflets or posters ready for printing.
+            </p>
+          </article>
+
+          <article class="portfolio-card">
+            <div class="number">03</div>
+            <h3>Everyday technology</h3>
+            <p>
+              Solve those annoying computer, phone, software, email, printer or
+              online-service problems that keep getting put off.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="promise">
+          <div>
+            <h2>Keep it simple.</h2>
+            <p>
+              You don't need to know the technical terminology. Tell me what you
+              want to achieve, and we'll work out the simplest way to get there.
+            </p>
+          </div>
+          <ul>
+            <li>Clear, straightforward advice</li>
+            <li>Agreed prices for defined jobs</li>
+            <li>No unnecessary technical jargon</li>
+            <li>Practical solutions for real-world problems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Need something sorted?</h2>
+          <p>
+            Tell me what you're trying to do, what isn't working, or what you'd
+            like to improve. For larger jobs, I'll discuss the requirements and
+            agree a price with you before starting.
+          </p>
+
+          <div class="buttons" style="margin-top:1.4rem;">
+            <a class="button button-primary" href="mailto:mb856188@gmail.com?subject=Digital%20Support%20Enquiry">Email me</a>
+            <a class="button" style="border:2px solid var(--navy); color:var(--navy);" href="tel:+447401374656">Call me</a>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li><strong>Email</strong><br><a href="mailto:mb856188@gmail.com">mb856188@gmail.com</a></li>
+            <li><strong>Telephone</strong><br><a href="tel:+447401374656">07401 374656</a></li>
+            <li><strong>Area</strong><br>Suffolk & online</li>
+          </ul>
+          <p class="small" style="margin-top:1.5rem;">
+            Introductory prices are subject to confirmation before work begins.
+          </p>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Practical Digital Support</div>
+      <div><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+</body>
+</html>
