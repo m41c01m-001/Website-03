@@ -4,543 +4,314 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Friendly, practical computer, website and digital support for individuals and small businesses in Suffolk and online.">
-  <meta name="theme-color" content="#243047">
-  <title>Practical Digital & Computer Support | Suffolk & Online</title>
-
+  <meta name="theme-color" content="#10101d">
+  <title>Practical Digital Support | Suffolk & Online</title>
   <style>
     :root {
-      --navy: #243047;
-      --navy-2: #182237;
-      --teal: #2f7f83;
-      --teal-dark: #24666a;
-      --cream: #f7f4ee;
-      --white: #ffffff;
-      --ink: #202733;
-      --muted: #5e6878;
-      --line: #dfe4e9;
-      --soft: #eef4f3;
-      --shadow: 0 14px 35px rgba(24, 34, 55, .10);
-      --radius: 16px;
-      --max: 1120px;
+      --ink: #171725;
+      --muted: #646477;
+      --paper: #fbfaf7;
+      --white: #fff;
+      --dark: #10101d;
+      --dark-2: #17172a;
+      --dark-3: #202039;
+      --line: #e8e6ee;
+      --purple: #8b5cf6;
+      --pink: #f472b6;
+      --cyan: #67e8f9;
+      --lime: #d9f99d;
+      --orange: #fb923c;
+      --shadow: 0 22px 60px rgba(24, 18, 48, .12);
+      --radius: 24px;
+      --max: 1180px;
     }
 
     * { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
+    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
     body {
       margin: 0;
       color: var(--ink);
-      background: var(--white);
-      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--paper);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
     }
-
     a { color: inherit; }
     img { max-width: 100%; height: auto; }
-
-    a:focus-visible, button:focus-visible {
-      outline: 3px solid #e0a84f;
-      outline-offset: 3px;
-      border-radius: 5px;
-    }
-
-    .skip-link {
-      position: absolute;
-      left: 1rem;
-      top: -5rem;
-      background: var(--white);
-      color: var(--navy);
-      padding: .7rem 1rem;
-      z-index: 1000;
-      border-radius: 0 0 8px 8px;
-      font-weight: 700;
-    }
-
-    .skip-link:focus { top: 0; }
-
-    .container {
-      width: min(calc(100% - 2rem), var(--max));
-      margin-inline: auto;
-    }
-
+    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
+    ::selection { background: var(--lime); color: var(--dark); }
+    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 999; background: white; color: var(--dark); padding: .8rem 1rem; border-radius: 10px; font-weight: 800; }
+    .skip-link:focus { top: 1rem; }
+    .container { width: min(calc(100% - 2.4rem), var(--max)); margin-inline: auto; }
     .site-header {
-      background: var(--navy);
-      color: var(--white);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      box-shadow: 0 3px 18px rgba(0,0,0,.12);
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(16, 16, 29, .88); color: white;
+      border-bottom: 1px solid rgba(255,255,255,.09);
+      backdrop-filter: blur(18px);
     }
-
-    .nav {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1rem;
-    }
-
-    .brand {
-      text-decoration: none;
-      font-weight: 800;
-      letter-spacing: -.02em;
-      font-size: 1.1rem;
-    }
-
-    .brand span {
-      display: block;
-      font-size: .76rem;
-      font-weight: 500;
-      opacity: .8;
-      letter-spacing: .04em;
-      margin-top: -.15rem;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 1.35rem;
-      align-items: center;
-      font-size: .95rem;
-    }
-
-    .nav-links a {
-      text-decoration: none;
-      opacity: .92;
-    }
-
-    .nav-links a:hover { opacity: 1; }
-
-    .nav-cta {
-      background: var(--teal);
-      padding: .55rem .9rem;
-      border-radius: 999px;
-      font-weight: 700;
-    }
-
-    /* Mobile Menu Styles */
-    .mobile-menu-toggle {
-      display: none;
-      background: transparent;
-      border: none;
-      color: var(--white);
-      font-size: 1.5rem;
-      cursor: pointer;
-      padding: .5rem;
-    }
+    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; }
+    .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; font-weight: 850; letter-spacing: -.04em; line-height: 1.05; }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; font-size: 1.25rem; box-shadow: 0 7px 25px rgba(139,92,246,.35); }
+    .brand span small { display: block; margin-top: .32rem; color: #b9b8cc; font-size: .68rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.7rem); font-size: .9rem; font-weight: 650; }
+    .nav-links a { text-decoration: none; color: #d9d8e8; transition: color .2s ease; }
+    .nav-links a:hover { color: var(--cyan); }
+    .nav-links .nav-cta { color: var(--dark); background: var(--lime); border-radius: 999px; padding: .68rem 1.05rem; font-weight: 850; }
+    .nav-links .nav-cta:hover { color: var(--dark); background: white; }
 
     .hero {
+      position: relative; isolation: isolate; overflow: hidden;
       background:
-        radial-gradient(circle at 80% 20%, rgba(47,127,131,.18), transparent 32%),
-        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
-      color: var(--white);
-      padding: 6.5rem 0 5.5rem;
+        radial-gradient(ellipse at 78% 28%, rgba(139,92,246,.24), transparent 32%),
+        radial-gradient(ellipse at 15% 95%, rgba(103,232,249,.10), transparent 34%),
+        linear-gradient(135deg, #10101d 0%, #151429 54%, #19162d 100%);
+      color: white; padding: clamp(5.3rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
     }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; mask-image: linear-gradient(90deg, transparent, black 50%, black); }
+    .hero::after { content: ""; position: absolute; z-index: -1; width: 420px; height: 420px; right: -180px; bottom: -270px; border: 1px solid rgba(217,249,157,.22); border-radius: 50%; box-shadow: 0 0 0 45px rgba(217,249,157,.025), 0 0 0 90px rgba(217,249,157,.02); }
+    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .65rem; color: var(--cyan); font-size: .75rem; text-transform: uppercase; letter-spacing: .17em; font-weight: 850; margin-bottom: 1.35rem; }
+    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--cyan); }
+    h1, h2, h3, p { margin-top: 0; }
+    h1 { max-width: 760px; margin-bottom: 1.35rem; font-size: clamp(3.2rem, 6.2vw, 6.1rem); line-height: .98; letter-spacing: -.075em; font-weight: 900; }
+    h1 .gradient { display: inline-block; color: transparent; background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, var(--pink)); -webkit-background-clip: text; background-clip: text; }
+    .hero-copy { max-width: 610px; color: #c7c6d8; font-size: clamp(1.03rem, 1.5vw, 1.2rem); line-height: 1.8; margin-bottom: 2rem; }
+    .buttons { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; min-height: 52px; padding: .82rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 850; border: 1px solid transparent; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .button:hover { transform: translateY(-3px); }
+    .button-primary { color: var(--dark); background: var(--lime); box-shadow: 0 8px 30px rgba(217,249,157,.12); }
+    .button-primary:hover { background: white; box-shadow: 0 12px 35px rgba(217,249,157,.2); }
+    .button-secondary { color: white; border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.035); }
+    .button-secondary:hover { background: rgba(255,255,255,.1); }
+    .hero-note { display: flex; align-items: center; gap: .65rem; margin-top: 1.7rem; color: #aeadc2; font-size: .84rem; }
+    .hero-note .dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(217,249,157,.1); }
 
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1.25fr .75fr;
-      gap: 4rem;
-      align-items: center;
-    }
+    /* Decorative, CSS-built portfolio collage: no extra image files required */
+    .showcase { min-height: 450px; position: relative; display: grid; place-items: center; perspective: 1000px; }
+    .showcase-glow { position: absolute; width: 76%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,.36), rgba(139,92,246,.06) 48%, transparent 70%); filter: blur(10px); }
+    .browser-card { position: absolute; width: min(100%, 420px); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; overflow: hidden; background: #f8f7ff; color: #201c35; box-shadow: 0 32px 90px rgba(0,0,0,.38); transform: rotate(-5deg) translate(-10px, 5px); animation: floatA 7s ease-in-out infinite; }
+    .browser-bar { height: 34px; padding: 0 13px; display: flex; align-items: center; gap: 5px; background: #e9e7f3; }
+    .browser-bar i { width: 7px; height: 7px; border-radius: 50%; background: #c1bdd2; }
+    .browser-address { margin-left: 9px; height: 16px; flex: 1; border-radius: 5px; background: rgba(255,255,255,.8); }
+    .mock-site { padding: 22px; min-height: 245px; background: linear-gradient(135deg, #fdf9ff, #edf5ff); }
+    .mock-site-top { display: flex; justify-content: space-between; align-items: center; font-size: 9px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
+    .mock-site-top span:first-child { color: #6d45d8; }
+    .mock-pill { width: 58px; height: 15px; border-radius: 99px; background: #d9f99d; }
+    .mock-site h3 { max-width: 250px; margin: 25px 0 10px; font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: .98; letter-spacing: -.06em; color: #211a38; }
+    .mock-site h3 span { color: #7c3aed; }
+    .mock-lines { display: grid; gap: 5px; margin-bottom: 17px; }
+    .mock-lines b { display: block; width: 76%; height: 5px; border-radius: 9px; background: #d7d3e7; }
+    .mock-lines b:nth-child(2) { width: 62%; }
+    .mock-lines b:nth-child(3) { width: 48%; }
+    .mock-mini-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; }
+    .mock-mini-cards span { height: 62px; border-radius: 8px; background: linear-gradient(135deg, #c4b5fd, #fbcfe8); }
+    .mock-mini-cards span:nth-child(2) { background: linear-gradient(135deg, #a5f3fc, #d9f99d); }
+    .mock-mini-cards span:nth-child(3) { background: linear-gradient(135deg, #fed7aa, #f9a8d4); }
+    .print-card { position: absolute; right: -2%; bottom: 3%; width: 185px; aspect-ratio: .72; padding: 15px; color: #fff; border-radius: 13px; background: linear-gradient(150deg, #fa78b8, #7c3aed 75%); box-shadow: 0 25px 55px rgba(0,0,0,.35); transform: rotate(9deg); animation: floatB 8s ease-in-out infinite; }
+    .print-card .tiny { font-size: 8px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
+    .print-card strong { display: block; margin-top: 35px; font-size: 1.5rem; line-height: .95; letter-spacing: -.06em; }
+    .print-card .scribble { margin-top: 16px; height: 3px; width: 48px; background: var(--lime); border-radius: 4px; }
+    .print-card .tiny-bottom { position: absolute; bottom: 14px; left: 15px; font-size: 8px; letter-spacing: .08em; }
+    .floating-chip { position: absolute; left: -1%; bottom: 8%; display: flex; align-items: center; gap: .65rem; padding: .8rem 1rem; border-radius: 15px; background: rgba(28,27,49,.9); border: 1px solid rgba(255,255,255,.15); box-shadow: 0 15px 40px rgba(0,0,0,.25); color: white; transform: rotate(-4deg); animation: floatB 6s ease-in-out infinite; }
+    .chip-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--dark); background: var(--cyan); font-weight: 900; }
+    .floating-chip strong { display: block; font-size: .78rem; }
+    .floating-chip small { display: block; font-size: .68rem; color: #b9b8cb; }
+    @keyframes floatA { 0%,100% { transform: rotate(-5deg) translate(-10px,5px); } 50% { transform: rotate(-3deg) translate(-10px,-8px); } }
+    @keyframes floatB { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
 
-    .eyebrow {
-      display: inline-block;
-      color: #bde2e1;
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-weight: 800;
-      font-size: .78rem;
-      margin-bottom: 1rem;
-    }
+    .trust-strip { background: var(--lime); color: #242533; }
+    .trust-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .trust-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; }
+    .trust-item { display: inline-flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 800; }
+    .trust-item b { font-size: 1.1rem; }
 
-    h1, h2, h3 {
-      line-height: 1.15;
-      letter-spacing: -.025em;
-      margin-top: 0;
-    }
+    section { padding: clamp(4.5rem, 7vw, 7rem) 0; }
+    .section-kicker { color: #7c3aed; text-transform: uppercase; letter-spacing: .15em; font-size: .73rem; font-weight: 900; margin-bottom: .8rem; }
+    .section-heading { max-width: 760px; margin-bottom: 2.6rem; }
+    .section-heading h2 { font-size: clamp(2.4rem, 4.5vw, 4.25rem); line-height: 1.02; letter-spacing: -.065em; margin-bottom: 1rem; font-weight: 900; }
+    .section-heading p { max-width: 660px; color: var(--muted); font-size: 1.08rem; margin: 0; }
+    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+    .intro-card { position: relative; overflow: hidden; padding: clamp(1.7rem, 3vw, 2.5rem); border-radius: var(--radius); background: white; border: 1px solid var(--line); box-shadow: 0 8px 35px rgba(33,25,58,.035); }
+    .intro-card::after { content: ""; position: absolute; width: 120px; height: 120px; right: -50px; bottom: -58px; border-radius: 50%; background: var(--wash, #e9d5ff); opacity: .7; }
+    .intro-card:first-child { --wash: #d9f99d; }
+    .intro-card:last-child { --wash: #a5f3fc; }
+    .card-symbol { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 1.25rem; border-radius: 15px; background: #f0eaff; color: #7c3aed; font-size: 1.3rem; font-weight: 900; }
+    .intro-card h3 { font-size: 1.45rem; letter-spacing: -.04em; margin-bottom: .65rem; }
+    .intro-card p { color: var(--muted); margin: 0; max-width: 470px; }
 
-    h1 {
-      font-size: clamp(2.45rem, 6vw, 4.6rem);
-      margin-bottom: 1.35rem;
-      max-width: 800px;
-    }
+    .services-section { background: #f0eff7; }
+    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
+    .service-card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem; border-radius: 20px; background: white; border: 1px solid rgba(41,34,67,.08); box-shadow: 0 8px 25px rgba(31,25,55,.035); transition: transform .25s ease, box-shadow .25s ease; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 22px 45px rgba(31,25,55,.1); }
+    .service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, linear-gradient(90deg,var(--purple),var(--pink))); }
+    .service-card:nth-child(2) { --accent: linear-gradient(90deg,#06b6d4,#67e8f9); }
+    .service-card:nth-child(3) { --accent: linear-gradient(90deg,#f97316,#fbbf24); }
+    .service-card:nth-child(4) { --accent: linear-gradient(90deg,#8b5cf6,#c4b5fd); }
+    .service-card:nth-child(5) { --accent: linear-gradient(90deg,#ec4899,#f9a8d4); }
+    .service-card:nth-child(6) { --accent: linear-gradient(90deg,#10b981,#d9f99d); }
+    .service-card:nth-child(7) { --accent: linear-gradient(90deg,#6366f1,#a5b4fc); }
+    .service-card:nth-child(8) { --accent: linear-gradient(90deg,#f97316,#fb7185); }
+    .service-icon { display: grid; place-items: center; width: 43px; height: 43px; margin: .2rem 0 1.15rem; border-radius: 13px; background: #f0eaff; color: #7c3aed; font-size: 1.2rem; font-weight: 900; }
+    .service-card:nth-child(2) .service-icon { background: #cffafe; color: #0e7490; }
+    .service-card:nth-child(3) .service-icon { background: #ffedd5; color: #c2410c; }
+    .service-card:nth-child(5) .service-icon { background: #fce7f3; color: #be185d; }
+    .service-card:nth-child(6) .service-icon { background: #d1fae5; color: #047857; }
+    .service-card h3 { font-size: 1.12rem; line-height: 1.2; letter-spacing: -.035em; margin-bottom: .5rem; }
+    .price { color: #6d28d9; font-size: 1.1rem; font-weight: 900; margin: .1rem 0 1rem; }
+    .service-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: .9rem; }
+    .service-card li + li { margin-top: .3rem; }
+    .highlight { display: flex; align-items: flex-start; gap: .8rem; margin-top: 1.5rem; padding: 1.2rem 1.4rem; border-radius: 16px; color: #2c2545; background: #e2f9b4; }
+    .highlight::before { content: "✓"; flex: 0 0 28px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #26391a; color: white; font-weight: 900; }
+    .highlight strong { display: block; }
 
-    .hero p {
-      color: #e5eaf2;
-      font-size: 1.15rem;
-      max-width: 680px;
-      margin-bottom: 1.8rem;
-    }
-
-    .buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .8rem;
-    }
-
-    .button {
-      display: inline-flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 48px;
-      padding: .7rem 1.1rem;
-      border-radius: 9px;
-      text-decoration: none;
-      font-weight: 800;
-      border: 2px solid transparent;
-    }
-
-    .button-primary {
-      background: var(--teal);
-      color: var(--white);
-    }
-
-    .button-primary:hover { background: var(--teal-dark); }
-
-    .button-secondary {
-      border-color: rgba(255,255,255,.45);
-      color: var(--white);
-    }
-
-    .button-secondary:hover { background: rgba(255,255,255,.08); }
-
-    .hero-card {
-      background: rgba(255,255,255,.08);
-      border: 1px solid rgba(255,255,255,.14);
-      padding: 1.7rem;
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    .hero-card h2 { font-size: 1.2rem; margin-bottom: .75rem; }
-    .hero-card ul { margin: 0; padding-left: 1.15rem; color: #edf1f6; }
-    .hero-card li + li { margin-top: .55rem; }
-
-    section { padding: 5rem 0; }
-    section.alt { background: var(--cream); }
-
-    .section-heading {
-      max-width: 720px;
-      margin-bottom: 2.3rem;
-    }
-
-    .section-heading h2 {
-      font-size: clamp(2rem, 4vw, 3rem);
-      margin-bottom: .75rem;
-    }
-
-    .section-heading p {
-      color: var(--muted);
-      margin: 0;
-      font-size: 1.05rem;
-    }
-
-    .intro-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 1.2rem;
-    }
-
-    .intro-card, .service-card, .price-card, .contact-card {
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: var(--white);
-      padding: 1.6rem;
-    }
-
-    .intro-card h3 { font-size: 1.2rem; margin-bottom: .55rem; }
-    .intro-card p { color: var(--muted); margin: 0; }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.15rem;
-    }
-
-    .service-card {
-      box-shadow: 0 7px 20px rgba(24,34,55,.05);
-    }
-
-    .service-card h3 {
-      font-size: 1.3rem;
-      margin-bottom: .35rem;
-    }
-
-    .price {
-      color: var(--teal-dark);
-      font-size: 1.25rem;
-      font-weight: 850;
-      margin: .35rem 0 .8rem;
-    }
-
-    .service-card ul {
-      margin: 0;
-      padding-left: 1.2rem;
-      color: var(--muted);
-    }
-
-    .service-card li + li { margin-top: .25rem; }
-
-    .highlight {
-      margin-top: 1.4rem;
-      padding: 1.2rem 1.35rem;
-      border-left: 5px solid var(--teal);
-      background: var(--soft);
-      border-radius: 0 12px 12px 0;
-    }
-
-    .highlight strong { color: var(--navy); }
-
-    .price-table-wrap {
-      overflow-x: auto;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      background: var(--white);
-      min-width: 100%;
-    }
-
-    th, td {
-  padding: 0.75rem 0.5rem;
-  text-align: left;
-  border-bottom: 1px solid var(--line);
-  word-break: normal;
-  overflow-wrap: break-word;
-    }
-
-    th {
-      background: var(--navy);
-      color: var(--white);
-      font-size: .92rem;
-    }
-
+    .prices-section { background: white; }
+    .price-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 3rem; align-items: start; }
+    .price-side-note { padding: 1.6rem; border-radius: 20px; color: white; background: linear-gradient(145deg, #21183b, #11101f); }
+    .price-side-note .big-number { color: var(--lime); font-size: 3.4rem; font-weight: 900; letter-spacing: -.08em; line-height: 1; }
+    .price-side-note h3 { margin: 1rem 0 .55rem; font-size: 1.35rem; }
+    .price-side-note p { color: #c5c1d6; font-size: .93rem; margin-bottom: 0; }
+    .price-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
+    table { width: 100%; border-collapse: collapse; background: white; min-width: 430px; }
+    th, td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid var(--line); }
+    th { background: #21183b; color: white; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
     tr:last-child td { border-bottom: 0; }
-    td:last-child { font-weight: 800; color: var(--teal-dark);  }
+    tbody tr:nth-child(even) { background: #faf9fd; }
+    tbody tr:hover { background: #f0eaff; }
+    td:last-child { font-weight: 900; color: #6d28d9; white-space: nowrap; }
 
-    .portfolio-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.5rem;
+    .work-section { background: var(--paper); }
+    .portfolio-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1.1rem; align-items: stretch; }
+    .portfolio-card { position: relative; min-height: 310px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 1.55rem; border-radius: 24px; border: 1px solid rgba(35,29,55,.08); background: white; box-shadow: 0 10px 35px rgba(30,24,55,.05); transition: transform .25s ease, box-shadow .25s ease; }
+    .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(30,24,55,.12); }
+    .portfolio-card:first-child { background: #e9e3ff; }
+    .portfolio-card:nth-child(2) { background: #ffeadc; }
+    .portfolio-card:nth-child(3) { background: #ddf8f9; }
+    .portfolio-card .number { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .45rem; color: #5b21b6; font-size: .74rem; font-weight: 950; letter-spacing: .12em; }
+    .portfolio-card h3 { position: relative; z-index: 1; font-size: 1.7rem; letter-spacing: -.05em; margin: 0 0 .65rem; }
+    .portfolio-card p { position: relative; z-index: 1; color: #55516a; margin: 0; max-width: 350px; }
+    .portfolio-art { position: relative; height: 130px; margin: 1.2rem 0 1.4rem; }
+    .mini-browser { position: absolute; left: 4%; top: 6%; width: 76%; height: 104px; border: 5px solid rgba(255,255,255,.8); border-radius: 10px; background: #fff; box-shadow: 0 12px 20px rgba(60,37,115,.14); transform: rotate(-3deg); overflow: hidden; }
+    .mini-browser::before { content: "•••"; display: block; height: 14px; padding-left: 7px; color: #b7a8e7; font-size: 10px; line-height: 12px; background: #f3efff; }
+    .mini-browser::after { content: ""; display: block; width: 72%; height: 52px; margin: 8px auto; border-radius: 5px; background: linear-gradient(135deg,#8b5cf6 0 36%,#c4b5fd 36% 62%,#fbcfe8 62%); }
+    .mini-card-a, .mini-card-b { position: absolute; right: 0; bottom: 4px; width: 105px; height: 65px; border-radius: 8px; box-shadow: 0 8px 18px rgba(60,37,115,.16); }
+    .mini-card-a { background: linear-gradient(135deg,#1e1640,#8b5cf6); transform: rotate(8deg); }
+    .mini-card-b { right: 62px; bottom: 13px; background: linear-gradient(135deg,#f97316,#f9a8d4); transform: rotate(-8deg); }
+    .print-art { position: absolute; inset: 0; }
+    .print-art span { position: absolute; display: block; border-radius: 10px; box-shadow: 0 10px 20px rgba(102,53,24,.13); }
+    .print-art span:first-child { width: 82px; height: 112px; left: 16%; top: 4px; transform: rotate(-8deg); background: linear-gradient(160deg,#7c2d12,#fb923c); }
+    .print-art span:nth-child(2) { width: 82px; height: 112px; left: 42%; top: 12px; transform: rotate(5deg); background: linear-gradient(160deg,#4c1d95,#f472b6); }
+    .print-art span:nth-child(3) { width: 112px; height: 72px; left: 55%; top: 42px; transform: rotate(7deg); background: linear-gradient(160deg,#fff,#ffedd5); border: 5px solid white; }
+    .tech-art { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
+    .tech-art .device { display: grid; place-items: center; border: 4px solid #2c5c68; border-radius: 12px; background: linear-gradient(145deg,#fff,#baf4f6); color: #147282; font-size: 1.5rem; font-weight: 900; box-shadow: 0 10px 20px rgba(20,114,130,.12); }
+    .tech-art .device:first-child { width: 130px; height: 82px; transform: rotate(-5deg); }
+    .tech-art .device:last-child { width: 45px; height: 75px; border-radius: 9px; transform: rotate(7deg); }
+    .work-link { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: #4c1d95; font-size: .84rem; font-weight: 900; text-decoration: none; }
+    .work-link:hover { text-decoration: underline; }
+
+    .promise-wrap { background: var(--dark); padding: clamp(4rem, 7vw, 6.5rem) 0; }
+    .promise { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: clamp(2rem, 5vw, 4.2rem); border: 1px solid rgba(255,255,255,.12); border-radius: 30px; background: radial-gradient(circle at 90% 0%, rgba(139,92,246,.22), transparent 40%), linear-gradient(135deg,#1d1b32,#151424); color: white; }
+    .promise::after { content: "✓"; position: absolute; right: 5%; top: -40px; color: rgba(217,249,157,.06); font-size: 17rem; line-height: 1; font-weight: 900; pointer-events: none; }
+    .promise h2 { position: relative; z-index: 1; font-size: clamp(2.3rem,4vw,3.7rem); line-height: 1; letter-spacing: -.06em; margin-bottom: 1rem; }
+    .promise p { position: relative; z-index: 1; color: #c8c6da; max-width: 500px; margin: 0; }
+    .promise ul { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; color: #eceaf5; }
+    .promise li { display: flex; gap: .8rem; align-items: flex-start; }
+    .promise li::before { content: "✓"; display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; margin-top: .12rem; border-radius: 50%; background: var(--lime); color: var(--dark); font-size: .78rem; font-weight: 950; }
+    .promise li + li { margin-top: .85rem; }
+
+    .contact { background: #eee9ff; }
+    .contact-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1.2rem; align-items: stretch; }
+    .contact-card { padding: clamp(1.8rem,4vw,3rem); border-radius: 24px; background: white; border: 1px solid rgba(64,40,120,.09); box-shadow: 0 12px 40px rgba(57,36,107,.06); }
+    .contact-card h2 { font-size: clamp(2rem,3.7vw,3.25rem); line-height: 1; letter-spacing: -.06em; margin-bottom: 1rem; }
+    .contact-card p { color: var(--muted); }
+    .contact .button-primary { background: #21183b; color: white; }
+    .contact .button-primary:hover { background: #6d28d9; }
+    .button-dark-outline { border-color: #d8d1e9; color: #241b3b; }
+    .button-dark-outline:hover { background: #f6f3ff; }
+    .contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
+    .contact-list li { padding: .9rem 0; border-bottom: 1px solid #efedf5; }
+    .contact-list li:last-child { border-bottom: 0; }
+    .contact-list strong { display: block; color: #79758d; text-transform: uppercase; font-size: .72rem; letter-spacing: .12em; margin-bottom: .2rem; }
+    .contact-list a { color: #6d28d9; font-weight: 850; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+    .small { font-size: .86rem; color: var(--muted); }
+    footer { background: #0c0b16; color: #aaa8bf; padding: 1.8rem 0; font-size: .86rem; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+    .footer-brand { color: white; font-weight: 850; }
+    footer a { color: var(--lime); text-decoration: none; font-weight: 800; }
+    footer a:hover { text-decoration: underline; }
+
+    @media (max-width: 1050px) {
+      .hero-grid { grid-template-columns: 1fr .9fr; gap: 1.5rem; }
+      .showcase { min-height: 400px; }
+      .service-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-card:first-child { grid-row: span 2; }
+      .price-layout { grid-template-columns: 1fr; gap: 1.5rem; }
+      .price-side-note { display: grid; grid-template-columns: auto 1fr; column-gap: 1.3rem; align-items: center; }
+      .price-side-note .big-number { grid-row: span 2; }
+      .price-side-note h3 { margin: 0 0 .35rem; }
     }
-
-    .portfolio-item {
-      background: var(--white);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      box-shadow: 0 7px 20px rgba(24,34,55,.05);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .portfolio-item:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow);
-    }
-
-    .portfolio-img-wrap {
-      width: 100%;
-      height: 340px;
-      background: #f0f3f6;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-
-    .portfolio-img-wrap img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 6px;
-    }
-
-    .portfolio-content {
-      padding: 1.5rem;
-      display: flex;
-      flex-direction: column;
-      flex-grow: 1;
-    }
-
-    .portfolio-tag {
-      color: var(--teal);
-      font-size: .8rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: .08em;
-      margin-bottom: .4rem;
-    }
-
-    .portfolio-content h3 {
-      font-size: 1.25rem;
-      margin-bottom: .5rem;
-    }
-
-    .portfolio-content p {
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      font-size: .95rem;
-      flex-grow: 1;
-    }
-
-    .portfolio-link {
-      color: var(--teal-dark);
-      font-weight: 800;
-      text-decoration: none;
-      display: inline-flex;
-      align-items: center;
-      gap: .3rem;
-    }
-
-    .portfolio-link:hover {
-      text-decoration: underline;
-    }
-
-    .promise {
-      background: var(--navy);
-      color: var(--white);
-      border-radius: 24px;
-      padding: 3rem;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2rem;
-      align-items: center;
-    }
-
-    .promise h2 { font-size: 2.1rem; }
-    .promise p { color: #e1e7ef; margin: 0; }
-    .promise ul { margin: 0; padding-left: 1.2rem; color: #e1e7ef; }
-    .promise li + li { margin-top: .5rem; }
-
-    .contact {
-      background: var(--cream);
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 1.25rem;
-      align-items: stretch;
-    }
-
-    .contact-card {
-      padding: 2rem;
-    }
-
-    .contact-card h2 { font-size: 2rem; }
-
-    .contact-list {
-      list-style: none;
-      padding: 0;
-      margin: 1.4rem 0 0;
-    }
-
-    .contact-list li + li { margin-top: .8rem; }
-
-    .contact-list a {
-      color: var(--teal-dark);
-      font-weight: 750;
-    }
-
-    .small {
-      font-size: .9rem;
-      color: var(--muted);
-    }
-
-    footer {
-      background: var(--navy-2);
-      color: #dbe1ea;
-      padding: 2rem 0;
-      font-size: .88rem;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      gap: 1rem;
-      flex-wrap: wrap;
-    }
-
-    footer a { color: #dbe1ea; }
-
-    @media (max-width: 850px) {
-      .hero-grid, .promise, .contact-grid { grid-template-columns: 1fr; }
-      .hero { padding: 5rem 0 4rem; }
-      .service-grid { grid-template-columns: 1fr; }
+    @media (max-width: 760px) {
+      .nav { min-height: 70px; }
+      .nav-links { gap: .75rem; font-size: .78rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { padding-top: 4.8rem; }
+      .hero-grid { grid-template-columns: 1fr; }
+      .showcase { min-height: 400px; margin-top: .8rem; }
+      .browser-card { width: min(90%, 420px); }
+      .print-card { right: 2%; width: 145px; }
+      .floating-chip { left: 0; }
+      .intro-grid, .promise, .contact-grid { grid-template-columns: 1fr; }
+      .promise { gap: 1.8rem; }
+      .trust-inner { justify-content: center; padding: 1.2rem 0; }
+      .trust-label { width: 100%; text-align: center; }
       .portfolio-grid { grid-template-columns: 1fr; }
-
-      .portfolio-img-wrap {
-        height: 280px;
-      }
-
-      .mobile-menu-toggle {
-        display: block;
-      }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        top: 100%;
-        left: 0;
-        right: 0;
-        background: var(--navy-2);
-        flex-direction: column;
-        padding: 1.5rem;
-        gap: 1.2rem;
-        border-bottom: 2px solid var(--teal);
-      }
-
-      .nav-links.active {
-        display: flex;
-      }
-
-      .nav-cta {
-        display: inline-block;
-        text-align: center;
-      }
+      .portfolio-card:first-child { grid-row: auto; }
+      .portfolio-card { min-height: 280px; }
     }
-
-    @media (max-width: 600px) {
-      section { padding: 3.7rem 0; }
-      .intro-grid { grid-template-columns: 1fr; }
-      .hero-card { margin-top: .5rem; }
-      .promise { padding: 2rem; }
-      h1 { font-size: 2.65rem; }
-      
-
+    @media (max-width: 480px) {
+      .container { width: min(calc(100% - 1.4rem), var(--max)); }
+      .brand { gap: .55rem; font-size: .92rem; }
+      .brand-mark { width: 36px; height: 36px; border-radius: 12px; }
+      .brand span small { font-size: .58rem; }
+      .nav-links .nav-cta { padding: .58rem .75rem; font-size: .75rem; }
+      h1 { font-size: clamp(3rem, 14vw, 4.3rem); }
+      .hero-copy { font-size: 1rem; }
+      .buttons { align-items: stretch; }
+      .buttons .button { flex: 1 1 100%; }
+      .showcase { min-height: 335px; }
+      .mock-site { min-height: 205px; padding: 17px; }
+      .mock-site h3 { margin-top: 20px; }
+      .mock-mini-cards span { height: 45px; }
+      .print-card { width: 120px; bottom: 0; }
+      .print-card strong { font-size: 1.2rem; margin-top: 25px; }
+      .floating-chip { bottom: 1%; padding: .65rem .75rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .price-side-note { display: block; }
+      .price-side-note h3 { margin-top: .8rem; }
+      th, td { padding: .85rem; font-size: .9rem; }
+      .promise { padding: 1.6rem; }
+      .contact-card { padding: 1.5rem; }
     }
-
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
   <header class="site-header">
     <div class="container nav">
-      <a class="brand" href="#top" aria-label="Practical Digital and Computer Support home">
-        Practical Digital Support
-        <span>Computer • Website • Digital Help</span>
+      <a class="brand" href="#top" aria-label="Practical Digital Support home">
+        <span class="brand-mark" aria-hidden="true">P<span style="color:#d9f99d">.</span></span>
+        <span>Practical Digital Support<small>Computer · Website · Digital Help</small></span>
       </a>
-
-      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <nav class="nav-links" aria-label="Main navigation">
         <a href="#services">Services</a>
-        <a href="#portfolio">Portfolio</a>
         <a href="#prices">Prices</a>
-        <a href="#work">What I can do</a>
-        <a class="nav-cta" href="#contact">Get in touch</a>
+        <a href="#work">My work</a>
+        <a class="nav-cta" href="#contact">Let's talk ↗</a>
       </nav>
     </div>
   </header>
@@ -548,348 +319,213 @@
   <main id="main">
     <section class="hero" id="top">
       <div class="container hero-grid">
-        <div>
-          <span class="eyebrow">Suffolk & online</span>
-          <h1>Technology shouldn't get in the way of running your business.</h1>
-          <p>
-            Friendly, practical help with computers, websites and the everyday digital jobs
-            that small businesses and individuals don't always have time — or the patience —
-            to sort out themselves.
-          </p>
-
+        <div class="hero-text">
+          <span class="eyebrow">Suffolk · Online · Here to help</span>
+          <h1>Make digital work <span class="gradient">for you.</span></h1>
+          <p class="hero-copy">Friendly, practical help with computers, websites and the everyday digital jobs that small businesses and individuals don't always have time — or the patience — to sort out themselves.</p>
           <div class="buttons">
-            <a class="button button-primary" href="#contact">Ask for help</a>
-            <a class="button button-secondary" href="#prices">See prices</a>
+            <a class="button button-primary" href="#contact">Tell me what you need <span aria-hidden="true">↗</span></a>
+            <a class="button button-secondary" href="#work">Explore what I do <span aria-hidden="true">↓</span></a>
+          </div>
+          <div class="hero-note"><span class="dot" aria-hidden="true"></span> Straight answers. Practical solutions. No jargon.</div>
+        </div>
+
+        <div class="showcase" aria-label="Illustration of website design, print design and digital support">
+          <div class="showcase-glow" aria-hidden="true"></div>
+          <div class="browser-card" aria-hidden="true">
+            <div class="browser-bar"><i></i><i></i><i></i><div class="browser-address"></div></div>
+            <div class="mock-site">
+              <div class="mock-site-top"><span>Made to make an impression</span><span class="mock-pill"></span></div>
+              <h3>Good ideas.<br><span>Beautifully online.</span></h3>
+              <div class="mock-lines"><b></b><b></b><b></b></div>
+              <div class="mock-mini-cards"><span></span><span></span><span></span></div>
+            </div>
+          </div>
+          <div class="print-card" aria-hidden="true">
+            <div class="tiny">Your brand, your way</div>
+            <strong>Stand out<br>from the<br>crowd.</strong>
+            <div class="scribble"></div>
+            <div class="tiny-bottom">DESIGN · PRINT · DIGITAL</div>
+          </div>
+          <div class="floating-chip" aria-hidden="true">
+            <span class="chip-icon">✓</span><span><strong>Problem solved.</strong><small>One less thing to worry about.</small></span>
           </div>
         </div>
-
-        <aside class="hero-card" aria-label="What I help with">
-          <h2>Practical help. No jargon.</h2>
-          <ul>
-            <li>Computer and device problems</li>
-            <li>Website updates and small changes</li>
-            <li>Simple business websites</li>
-            <li>Business cards, flyers and print-ready artwork</li>
-            <li>Online booking and digital admin</li>
-          </ul>
-        </aside>
       </div>
     </section>
 
-    <section>
+    <div class="trust-strip" aria-label="Service highlights">
+      <div class="container trust-inner">
+        <span class="trust-label">Good help, without the headache</span>
+        <span class="trust-item"><b>✳</b> Practical tech support</span>
+        <span class="trust-item"><b>✦</b> Websites that work</span>
+        <span class="trust-item"><b>✳</b> Design that stands out</span>
+      </div>
+    </div>
+
+    <section id="about">
       <div class="container">
         <div class="section-heading">
-          <h2>What I do</h2>
-          <p>
-            I provide straightforward digital support for people who want something
-            sorted without having to become a computer expert themselves.
-          </p>
+          <div class="section-kicker">A human approach to technology</div>
+          <h2>Good support should make life <span style="color:#7c3aed">simpler.</span></h2>
+          <p>I provide straightforward digital support for people who want something sorted without having to become a computer expert themselves.</p>
         </div>
-
         <div class="intro-grid">
           <article class="intro-card">
+            <div class="card-symbol" aria-hidden="true">↗</div>
             <h3>For small businesses</h3>
-            <p>
-              Keep your website, digital information and printed materials looking
-              professional and up to date — without the cost or complexity of a large agency.
-            </p>
+            <p>Keep your website, digital information and printed materials looking professional and up to date — without the cost or complexity of a large agency.</p>
           </article>
-
           <article class="intro-card">
+            <div class="card-symbol" aria-hidden="true">⌘</div>
             <h3>For individuals</h3>
-            <p>
-              Get practical help with computers, phones, software, email, printers,
-              files and other everyday technology problems.
-            </p>
+            <p>Get practical help with computers, phones, software, email, printers, files and other everyday technology problems.</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="alt" id="services">
+    <section class="services-section" id="services">
       <div class="container">
         <div class="section-heading">
-          <h2>Services</h2>
-          <p>
-            Most small jobs are straightforward. Where a job is larger, I'll agree
-            the scope and price with you before starting.
-          </p>
+          <div class="section-kicker">Useful skills. Straightforward service.</div>
+          <h2>What can I help you <span style="color:#7c3aed">sort out?</span></h2>
+          <p>Most small jobs are straightforward. Where a job is larger, I'll agree the scope and price with you before starting.</p>
         </div>
 
         <div class="service-grid">
           <article class="service-card">
-            <h3>Computer & Technology Help</h3>
+            <div class="service-icon" aria-hidden="true">⌘</div>
+            <h3>Computer &amp; Technology Help</h3>
             <div class="price">£30 per hour</div>
-            <ul>
-              <li>PC and laptop setup</li>
-              <li>Software installation and configuration</li>
-              <li>Email, printer and Wi-Fi problems</li>
-              <li>Smartphone and tablet assistance</li>
-              <li>File organisation and backups</li>
-              <li>General troubleshooting</li>
-            </ul>
+            <ul><li>PC and laptop setup</li><li>Software installation and configuration</li><li>Email, printer and Wi-Fi problems</li><li>Smartphone and tablet assistance</li><li>File organisation and backups</li><li>General troubleshooting</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">▣</div>
             <h3>Website Updates</h3>
             <div class="price">£30 per hour</div>
-            <ul>
-              <li>Change text and images</li>
-              <li>Add events, services or sections</li>
-              <li>Update links and contact information</li>
-              <li>Photograph and media updates</li>
-              <li>Small layout changes</li>
-              <li>General website tidy-ups</li>
-            </ul>
+            <ul><li>Change text and images</li><li>Add events, services or sections</li><li>Update links and contact information</li><li>Photograph and media updates</li><li>Small layout changes</li><li>General website tidy-ups</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✎</div>
             <h3>Small Website Changes</h3>
             <div class="price">From £40</div>
-            <ul>
-              <li>Fixed-price work where the job is clearly defined</li>
-              <li>New sections or service information</li>
-              <li>Events and calendar additions</li>
-              <li>Multiple small amendments</li>
-            </ul>
+            <ul><li>Fixed-price work where the job is clearly defined</li><li>New sections or service information</li><li>Events and calendar additions</li><li>Multiple small amendments</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">✦</div>
             <h3>Simple Business Website</h3>
             <div class="price">From £400</div>
-            <ul>
-              <li>Modern, mobile-friendly design</li>
-              <li>Home, About and Services sections</li>
-              <li>Gallery and contact information</li>
-              <li>Enquiry/contact form</li>
-              <li>Social-media links</li>
-            </ul>
+            <ul><li>Modern, mobile-friendly design</li><li>Home, About and Services sections</li><li>Gallery and contact information</li><li>Enquiry/contact form</li><li>Social-media links</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">↻</div>
             <h3>Website Care</h3>
             <div class="price">£40 per month</div>
-            <ul>
-              <li>Minor text and image changes</li>
-              <li>Small content updates</li>
-              <li>General website assistance</li>
-              <li>Up to 1 hour of minor changes per month</li>
-              <li>Larger changes quoted separately</li>
-            </ul>
+            <ul><li>Minor text and image changes</li><li>Small content updates</li><li>General website assistance</li><li>Up to 1 hour of minor changes per month</li><li>Larger changes quoted separately</li></ul>
           </article>
-
           <article class="service-card">
-            <h3>Business Cards & Print Design</h3>
+            <div class="service-icon" aria-hidden="true">▤</div>
+            <h3>Business Cards &amp; Print Design</h3>
             <div class="price">From £35</div>
-            <ul>
-              <li>Business card design</li>
-              <li>Flyers, leaflets and posters</li>
-              <li>Professional layout</li>
-              <li>Print-ready artwork supplied</li>
-              <li>Printing charged separately</li>
-            </ul>
+            <ul><li>Business card design</li><li>Flyers, leaflets and posters</li><li>Professional layout</li><li>Print-ready artwork supplied</li><li>Printing charged separately</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">◎</div>
             <h3>Digital Business Support</h3>
             <div class="price">£30 per hour</div>
-            <ul>
-              <li>Online booking systems</li>
-              <li>Google services</li>
-              <li>Online forms</li>
-              <li>Basic spreadsheets</li>
-              <li>Website and social-media assistance</li>
-              <li>General “How do I do this?” problems</li>
-            </ul>
+            <ul><li>Online booking systems</li><li>Google services</li><li>Online forms</li><li>Basic spreadsheets</li><li>Website and social-media assistance</li><li>General “How do I do this?” problems</li></ul>
           </article>
-
           <article class="service-card">
+            <div class="service-icon" aria-hidden="true">＋</div>
             <h3>Something else?</h3>
             <div class="price">Just ask</div>
-            <ul>
-              <li>If it's computer-related, I may be able to help.</li>
-              <li>I'll explain what is involved.</li>
-              <li>You'll know the cost before substantial work begins.</li>
-              <li>No complicated quotation process.</li>
-            </ul>
+            <ul><li>If it's computer-related, I may be able to help.</li><li>I'll explain what is involved.</li><li>You'll know the cost before substantial work begins.</li><li>No complicated quotation process.</li></ul>
           </article>
         </div>
 
-        <div class="highlight">
-          <strong>No surprise bills.</strong>
-          For small jobs I'll tell you the price before starting. If a job becomes
-          substantially bigger than expected, I'll explain the situation before doing
-          additional work.
+        <div class="highlight"><div><strong>No surprise bills.</strong> For small jobs I'll tell you the price before starting. If a job becomes substantially bigger than expected, I'll explain the situation before doing additional work.</div></div>
+      </div>
+    </section>
+
+    <section class="prices-section" id="prices">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Clear from the start</div>
+          <h2>Good work. <span style="color:#7c3aed">Fair prices.</span></h2>
+          <p>Simple pricing while I build my customer base. Third-party costs such as hosting, domains, printing and paid software are not included unless stated.</p>
+        </div>
+        <div class="price-layout">
+          <aside class="price-side-note">
+            <div class="big-number">£30</div>
+            <h3>Simple hourly pricing</h3>
+            <p>For computer help, website updates and digital business support. Fixed-price options are available for clearly defined jobs.</p>
+          </aside>
+          <div class="price-table-wrap">
+            <table>
+              <thead><tr><th>Service</th><th>Introductory price</th></tr></thead>
+              <tbody>
+                <tr><td>Computer / technology help</td><td>£30/hour</td></tr>
+                <tr><td>Website updates</td><td>£30/hour</td></tr>
+                <tr><td>Digital business support</td><td>£30/hour</td></tr>
+                <tr><td>Business card design</td><td>From £35</td></tr>
+                <tr><td>Flyer / leaflet / poster design</td><td>From £45</td></tr>
+                <tr><td>Small website changes</td><td>From £40</td></tr>
+                <tr><td>Website maintenance</td><td>£40/month</td></tr>
+                <tr><td>Simple business website</td><td>From £400</td></tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- Portfolio Section -->
-    <section id="portfolio">
+    <section class="work-section" id="work">
       <div class="container">
         <div class="section-heading">
-          <h2>Recent Work & Portfolio</h2>
-          <p>
-            Examples of print-ready designs and live website projects designed and developed for clients.
-          </p>
+          <div class="section-kicker">Practical work. Creative thinking.</div>
+          <h2>From everyday fixes to <span style="color:#7c3aed">standout design.</span></h2>
+          <p>A few examples of the sort of practical work this service is designed for.</p>
         </div>
-
-        <div class="portfolio-grid">
-
-          <!-- Website Example -->
-          <article class="portfolio-item">
-            <div class="portfolio-img-wrap">
-              <svg width="100" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-                <line x1="8" y1="21" x2="16" y2="21"></line>
-                <line x1="12" y1="17" x2="12" y2="21"></line>
-              </svg>
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-tag">Web Design & Build</span>
-              <h3>Leeza Cook - Professional Violinist</h3>
-              <p>A sleek, elegant responsive website created for professional violinist Leeza Cook, highlighting performances, sound clips, and bookings.</p>
-              <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
-                Visit Website &rarr;
-              </a>
-            </div>
-          </article>
-   
-
-          <!-- Business Card -->
-          <article class="portfolio-item">
-            <div class="portfolio-img-wrap">
-              <img src="LCBC.jpg" alt="Leeza Cook - Violin Tutor Business Card Design" loading="lazy">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-tag">Print Design</span>
-              <h3>Business Card Design</h3>
-              <p>Clean, professional double-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
-            </div>
-          </article>
-
-          <!-- Business Card -->
-          <article class="portfolio-item">
-            <div class="portfolio-img-wrap">
-              <img src="LCBC-01.jpg" alt="Leeza Cook - Violin Tutor Business Card Design" loading="lazy">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-tag">Print Design</span>
-              <h3>Business Card Design</h3>
-              <p>Clean, professional double-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
-            </div>
-          </article>
-
-          <!-- Business Card -->
-          <article class="portfolio-item">
-            <div class="portfolio-img-wrap">
-              <img src="Business-card-003.jpeg" alt="Terry's Outdoor & Property Maintenance Business Card Design" loading="lazy">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-tag">Print Design</span>
-              <h3>Business Card Design</h3>
-              <p>Clean, professional single-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
-            </div>
-          </article>
-          
-          <!-- A6 Leaflet -->
-          <article class="portfolio-item">
-            <div class="portfolio-img-wrap">
-              <img src="A6-Terry-001e.jpg" alt="Terry's Outdoor and Property Maintenance Services A6 Leaflet Design" loading="lazy">
-            </div>
-            <div class="portfolio-content">
-              <span class="portfolio-tag">Print Design</span>
-              <h3>A6 Promotional Leaflet</h3>
-              <p>Eye-catching promotional flyer design for outdoor and property maintenance services, structured with clear service highlights and contact details.</p>
-            </div>
-          </article>
-          
-        </div>
-      </div>
-    </section>
-
-    <section id="prices" class="alt">
-      <div class="container">
-        <div class="section-heading">
-          <h2>Introductory prices</h2>
-          <p>
-            Simple pricing while I build my customer base. Third-party costs such as
-            hosting, domains, printing and paid software are not included unless stated.
-          </p>
-        </div>
-
-        <div class="price-table-wrap">
-          <table>
-            <thead>
-              <tr>
-                <th>Service</th>
-                <th>Introductory price</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr><td>Computer / technology help</td><td>£30/hour</td></tr>
-              <tr><td>Website updates</td><td>£30/hour</td></tr>
-              <tr><td>Digital business support</td><td>£30/hour</td></tr>
-              <tr><td>Business card design</td><td>From £35</td></tr>
-              <tr><td>Flyer / leaflet / poster design</td><td>From £45</td></tr>
-              <tr><td>Small website changes</td><td>From £40</td></tr>
-              <tr><td>Website maintenance</td><td>£40/month</td></tr>
-              <tr><td>Simple business website</td><td>From £400</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </section>
-
-    <section id="work">
-      <div class="container">
-        <div class="section-heading">
-          <h2>What I can help you with</h2>
-          <p>
-            A few examples of the sort of practical work this service is designed for.
-          </p>
-        </div>
-
         <div class="portfolio-grid">
           <article class="portfolio-card">
-            <!-- <div class="number">01</div> -->
-            <h3>Websites</h3>
-            <p>
-              Build a simple site for a local business, or keep an existing site
-              updated as services, photographs and information change.
-            </p>
+            <div>
+              <div class="number">01 / WEB DESIGN</div>
+              <div class="portfolio-art" aria-hidden="true"><div class="mini-browser"></div><div class="mini-card-a"></div><div class="mini-card-b"></div></div>
+              <h3>Websites</h3>
+              <p>Build a simple site for a local business, or keep an existing site updated as services, photographs and information change.</p>
+            </div>
+            <a class="work-link" href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer">View website project <span aria-hidden="true">↗</span></a>
           </article>
-
           <article class="portfolio-card">
-            <!-- <div class="number">02</div> -->
-            <h3>Printed materials</h3>
-            <p>
-              Turn your business information into clean, professional business cards,
-              flyers, leaflets or posters ready for printing.
-            </p>
+            <div>
+              <div class="number">02 / PRINT &amp; BRANDING</div>
+              <div class="portfolio-art print-art" aria-hidden="true"><span></span><span></span><span></span></div>
+              <h3>Printed materials</h3>
+              <p>Turn your business information into clean, professional business cards, flyers, leaflets or posters ready for printing.</p>
+            </div>
+            <a class="work-link" href="#contact">Discuss a design <span aria-hidden="true">↗</span></a>
           </article>
-
           <article class="portfolio-card">
-            <!-- <div class="number">03</div> -->
-            <h3>Everyday technology</h3>
-            <p>
-              Solve those annoying computer, phone, software, email, printer or
-              online-service problems that keep getting put off.
-            </p>
+            <div>
+              <div class="number">03 / TECH SUPPORT</div>
+              <div class="portfolio-art tech-art" aria-hidden="true"><div class="device">⌘</div><div class="device">✓</div></div>
+              <h3>Everyday technology</h3>
+              <p>Solve those annoying computer, phone, software, email, printer or online-service problems that keep getting put off.</p>
+            </div>
+            <a class="work-link" href="#contact">Get practical help <span aria-hidden="true">↗</span></a>
           </article>
         </div>
       </div>
     </section>
 
-    <section>
+    <section class="promise-wrap">
       <div class="container">
         <div class="promise">
           <div>
-            <h2>Keep it simple.</h2>
-            <p>
-              You don't need to know the technical terminology. Tell me what you
-              want to achieve, and we'll work out the simplest way to get there.
-            </p>
+            <div class="section-kicker" style="color:#d9f99d">The promise</div>
+            <h2>Keep it simple.<br>Make it work.</h2>
+            <p>You don't need to know the technical terminology. Tell me what you want to achieve, and we'll work out the simplest way to get there.</p>
           </div>
           <ul>
             <li>Clear, straightforward advice</li>
@@ -904,29 +540,23 @@
     <section class="contact" id="contact">
       <div class="container contact-grid">
         <div class="contact-card">
-          <h2>Need something sorted?</h2>
-          <p>
-            Tell me what you're trying to do, what isn't working, or what you'd
-            like to improve. For larger jobs, I'll discuss the requirements and
-            agree a price with you before starting.
-          </p>
-
+          <div class="section-kicker">Your next step</div>
+          <h2>Need something <span style="color:#7c3aed">sorted?</span></h2>
+          <p>Tell me what you're trying to do, what isn't working, or what you'd like to improve. For larger jobs, I'll discuss the requirements and agree a price with you before starting.</p>
           <div class="buttons" style="margin-top:1.4rem;">
-            <a class="button button-primary" href="mailto:mb856188@gmail.com?subject=Digital%20Support%20Enquiry">Email me</a>
-            <a class="button" style="border:2px solid var(--navy); color:var(--navy);" href="tel:+447401374656">Call me</a>
+            <a class="button button-primary" href="mailto:mb856188@gmail.com?subject=Digital%20Support%20Enquiry">Email me ↗</a>
+            <a class="button button-dark-outline" href="tel:+447401374656">Call me ☎</a>
           </div>
         </div>
-
         <aside class="contact-card">
-          <h2>Contact</h2>
+          <h2>Let's talk.</h2>
+          <p>Friendly help is only a message away.</p>
           <ul class="contact-list">
-            <li><strong>Email</strong><br><a href="mailto:mb856188@gmail.com">mb856188@gmail.com</a></li>
-            <li><strong>Telephone</strong><br><a href="tel:+447401374656">07401 374656</a></li>
-            <li><strong>Area</strong><br>Suffolk & online</li>
+            <li><strong>Email</strong><a href="mailto:mb856188@gmail.com">mb856188@gmail.com</a></li>
+            <li><strong>Telephone</strong><a href="tel:+447401374656">07401 374656</a></li>
+            <li><strong>Area</strong>Suffolk &amp; online</li>
           </ul>
-          <p class="small" style="margin-top:1.5rem;">
-            Introductory prices are subject to confirmation before work begins.
-          </p>
+          <p class="small" style="margin-top:1.2rem;">Introductory prices are subject to confirmation before work begins.</p>
         </aside>
       </div>
     </section>
@@ -934,26 +564,9 @@
 
   <footer>
     <div class="container footer-inner">
-      <div>© 2026 Practical Digital Support</div>
-      <div><a href="#top">Back to top</a></div>
+      <div><span class="footer-brand">Practical Digital Support</span> · © 2026</div>
+      <div>Local support. Online flexibility. <a href="#top">Back to top ↑</a></div>
     </div>
   </footer>
-
-  <script>
-    // Toggle Mobile Navigation Menu
-    const menuToggle = document.getElementById('menuToggle');
-    const navLinks = document.getElementById('navLinks');
-
-    menuToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    // Close menu when clicking a link on mobile
-    navLinks.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
-      });
-    });
-  </script>
 </body>
 </html>
