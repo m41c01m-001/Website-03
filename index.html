@@ -4,403 +4,956 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Friendly, practical computer, website and digital support for individuals and small businesses in Suffolk and online.">
-  <meta name="theme-color" content="#10101d">
-  <title>Practical Digital Support | Suffolk & Online</title>
+  <meta name="theme-color" content="#243047">
+  <title>Practical Digital & Computer Support | Suffolk & Online</title>
+
   <style>
     :root {
-      --ink: #171725;
-      --muted: #646477;
-      --paper: #fbfaf7;
-      --white: #fff;
-      --dark: #10101d;
-      --dark-2: #17172a;
-      --dark-3: #202039;
-      --line: #e8e6ee;
-      --purple: #8b5cf6;
-      --pink: #f472b6;
-      --cyan: #67e8f9;
-      --lime: #d9f99d;
-      --orange: #fb923c;
-      --gold: #d7b56d;
-      --gold-soft: #f7e8bf;
-      --plum: #3f2146;
-      --wine: #6f2f47;
-      --shadow: 0 22px 60px rgba(24, 18, 48, .12);
-      --shadow-strong: 0 28px 64px rgba(20, 12, 34, .18);
-      --radius: 24px;
-      --max: 1180px;
+      --navy: #243047;
+      --navy-2: #182237;
+      --teal: #2f7f83;
+      --teal-dark: #24666a;
+      --cream: #f7f4ee;
+      --white: #ffffff;
+      --ink: #202733;
+      --muted: #5e6878;
+      --line: #dfe4e9;
+      --soft: #eef4f3;
+      --shadow: 0 14px 35px rgba(24, 34, 55, .10);
+      --radius: 16px;
+      --max: 1120px;
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
       color: var(--ink);
-      background:
-        radial-gradient(circle at top, rgba(215,181,109,.10), transparent 25%),
-        var(--paper);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--white);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       line-height: 1.65;
-      -webkit-font-smoothing: antialiased;
     }
+
     a { color: inherit; }
     img { max-width: 100%; height: auto; }
-    a:focus-visible, button:focus-visible { outline: 3px solid var(--orange); outline-offset: 4px; }
-    ::selection { background: var(--lime); color: var(--dark); }
-    .skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 999; background: white; color: var(--dark); padding: .8rem 1rem; border-radius: 10px; font-weight: 800; }
-    .skip-link:focus { top: 1rem; }
-    .container { width: min(calc(100% - 2.4rem), var(--max)); margin-inline: auto; }
-    .site-header {
-      position: sticky; top: 0; z-index: 100;
-      background: rgba(16, 16, 29, .88); color: white;
-      border-bottom: 1px solid rgba(255,255,255,.09);
-      backdrop-filter: blur(18px);
+
+    a:focus-visible, button:focus-visible {
+      outline: 3px solid #e0a84f;
+      outline-offset: 3px;
+      border-radius: 5px;
     }
-    .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; }
-    .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; font-weight: 850; letter-spacing: -.04em; line-height: 1.05; }
-    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; font-size: 1.25rem; font-weight: 900; }
-    .brand span { display: inline-block; }
-    .brand span small { display: block; margin-top: .32rem; color: #b9b8cc; font-size: .68rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
-    .nav-links { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.7rem); font-size: .9rem; font-weight: 650; }
-    .nav-links a { text-decoration: none; color: #d9d8e8; transition: color .2s ease; }
-    .nav-links a:hover { color: var(--cyan); }
-    .nav-links .nav-cta { color: var(--dark); background: var(--lime); border-radius: 999px; padding: .68rem 1.05rem; font-weight: 850; }
-    .nav-links .nav-cta:hover { color: var(--dark); background: white; }
+
+    .skip-link {
+      position: absolute;
+      left: 1rem;
+      top: -5rem;
+      background: var(--white);
+      color: var(--navy);
+      padding: .7rem 1rem;
+      z-index: 1000;
+      border-radius: 0 0 8px 8px;
+      font-weight: 700;
+    }
+
+    .skip-link:focus { top: 0; }
+
+    .container {
+      width: min(calc(100% - 2rem), var(--max));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      background: var(--navy);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 3px 18px rgba(0,0,0,.12);
+    }
+
+    .nav {
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      text-decoration: none;
+      font-weight: 800;
+      letter-spacing: -.02em;
+      font-size: 1.1rem;
+    }
+
+    .brand span {
+      display: block;
+      font-size: .76rem;
+      font-weight: 500;
+      opacity: .8;
+      letter-spacing: .04em;
+      margin-top: -.15rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.35rem;
+      align-items: center;
+      font-size: .95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      opacity: .92;
+    }
+
+    .nav-links a:hover { opacity: 1; }
+
+    .nav-cta {
+      background: var(--teal);
+      padding: .55rem .9rem;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    /* Mobile Menu Styles */
+    .mobile-menu-toggle {
+      display: none;
+      background: transparent;
+      border: none;
+      color: var(--white);
+      font-size: 1.5rem;
+      cursor: pointer;
+      padding: .5rem;
+    }
 
     .hero {
-      position: relative; isolation: isolate; overflow: hidden;
       background:
-        radial-gradient(ellipse at 78% 28%, rgba(139,92,246,.24), transparent 32%),
-        radial-gradient(ellipse at 15% 95%, rgba(103,232,249,.10), transparent 34%),
-        linear-gradient(135deg, #10101d 0%, #151429 54%, #19162d 100%);
-      color: white; padding: clamp(5.3rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
+        radial-gradient(circle at 80% 20%, rgba(47,127,131,.18), transparent 32%),
+        linear-gradient(135deg, var(--navy) 0%, var(--navy-2) 100%);
+      color: var(--white);
+      padding: 6.5rem 0 5.5rem;
     }
-    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; }
-    .hero::after { content: ""; position: absolute; z-index: -1; width: 420px; height: 420px; right: -180px; bottom: -270px; border: 1px solid rgba(217,249,157,.22); border-radius: 50%; box-shadow: 0 0 0 42px rgba(139,92,246,.03); }
-    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: .65rem; color: var(--cyan); font-size: .75rem; text-transform: uppercase; letter-spacing: .17em; font-weight: 850; margin-bottom: 1.3rem; }
-    .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--cyan); }
-    h1, h2, h3, p { margin-top: 0; }
-    h1 { max-width: 760px; margin-bottom: 1.35rem; font-size: clamp(3.2rem, 6.2vw, 6.1rem); line-height: .98; letter-spacing: -.075em; font-weight: 900; }
-    h1 .gradient { display: inline-block; color: transparent; background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, var(--pink)); -webkit-background-clip: text; background-clip: text; }
-    .hero-copy { max-width: 610px; color: #c7c6d8; font-size: clamp(1.03rem, 1.5vw, 1.2rem); line-height: 1.8; margin-bottom: 2rem; }
-    .buttons { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
-    .button { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; min-height: 52px; padding: .82rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 850; transition: transform .2s ease, background-color .2s ease, border-color .2s ease, box-shadow .22s ease; }
-    .button:hover { transform: translateY(-3px); }
-    .button-primary { color: var(--dark); background: var(--lime); box-shadow: 0 8px 30px rgba(217,249,157,.12); }
-    .button-primary:hover { background: white; box-shadow: 0 12px 35px rgba(217,249,157,.2); }
-    .button-secondary { color: white; border-color: rgba(255,255,255,.24); background: rgba(255,255,255,.035); }
-    .button-secondary:hover { background: rgba(255,255,255,.1); }
-    .hero-note { display: flex; align-items: center; gap: .65rem; margin-top: 1.7rem; color: #aeadc2; font-size: .84rem; }
-    .hero-note .dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(217,249,157,.1); }
 
-    .showcase { min-height: 450px; position: relative; display: grid; place-items: center; perspective: 1000px; }
-    .showcase-glow { position: absolute; width: 76%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,.36), rgba(139,92,246,.06) 48%, transparent 70%); filter: blur(10px); }
-    .browser-card { position: absolute; width: min(100%, 420px); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; overflow: hidden; background: #f8f7ff; color: #201c35; box-shadow: 0 30px 70px rgba(11,9,23,.28); transform: rotate(-5deg); }
-    .browser-bar { height: 34px; padding: 0 13px; display: flex; align-items: center; gap: 5px; background: #e9e7f3; }
-    .browser-bar i { width: 7px; height: 7px; border-radius: 50%; background: #c1bdd2; }
-    .browser-address { margin-left: 9px; height: 16px; flex: 1; border-radius: 5px; background: rgba(255,255,255,.8); }
-    .mock-site { padding: 22px; min-height: 245px; background: linear-gradient(135deg, #fdf9ff, #edf5ff); }
-    .mock-site-top { display: flex; justify-content: space-between; align-items: center; font-size: 9px; font-weight: 900; letter-spacing: .07em; text-transform: uppercase; }
-    .mock-site-top span:first-child { color: #6d45d8; }
-    .mock-pill { width: 58px; height: 15px; border-radius: 99px; background: #d9f99d; }
-    .mock-site h3 { max-width: 250px; margin: 25px 0 10px; font-size: clamp(1.6rem, 3vw, 2.25rem); line-height: .98; letter-spacing: -.06em; color: #211a38; }
-    .mock-site h3 span { color: #7c3aed; }
-    .mock-lines { display: grid; gap: 5px; margin-bottom: 17px; }
-    .mock-lines b { display: block; width: 76%; height: 5px; border-radius: 9px; background: #d7d3e7; }
-    .mock-lines b:nth-child(2) { width: 62%; }
-    .mock-lines b:nth-child(3) { width: 48%; }
-    .mock-mini-cards { display: grid; grid-template-columns: repeat(3,1fr); gap: 7px; }
-    .mock-mini-cards span { height: 62px; border-radius: 8px; background: linear-gradient(135deg, #c4b5fd, #fbcfe8); }
-    .mock-mini-cards span:nth-child(2) { background: linear-gradient(135deg, #a5f3fc, #d9f99d); }
-    .mock-mini-cards span:nth-child(3) { background: linear-gradient(135deg, #fed7aa, #f9a8d4); }
-    .print-card { position: absolute; right: -2%; bottom: 3%; width: 185px; aspect-ratio: .72; padding: 15px; color: #fff; border-radius: 13px; background: linear-gradient(150deg, #fa78b8, #7c3aed); box-shadow: 0 22px 36px rgba(92,40,151,.18); transform: rotate(12deg); }
-    .print-card .tiny { font-size: 8px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
-    .print-card strong { display: block; margin-top: 35px; font-size: 1.5rem; line-height: .95; letter-spacing: -.06em; }
-    .print-card .scribble { margin-top: 16px; height: 3px; width: 48px; background: var(--lime); border-radius: 4px; }
-    .print-card .tiny-bottom { position: absolute; bottom: 14px; left: 15px; font-size: 8px; letter-spacing: .08em; }
-    .floating-chip { position: absolute; left: -1%; bottom: 8%; display: flex; align-items: center; gap: .65rem; padding: .8rem 1rem; border-radius: 15px; background: rgba(28,27,49,.9); border: 1px solid rgba(255,255,255,.12); color: white; box-shadow: 0 12px 30px rgba(14,11,25,.18); animation: floatB 7s ease-in-out infinite; }
-    .chip-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--dark); background: var(--cyan); font-weight: 900; }
-    .floating-chip strong { display: block; font-size: .78rem; }
-    .floating-chip small { display: block; font-size: .68rem; color: #b9b8cb; }
-    @keyframes floatA { 0%,100% { transform: rotate(-5deg) translate(-10px,5px); } 50% { transform: rotate(-3deg) translate(-10px,-8px); } }
-    @keyframes floatB { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.25fr .75fr;
+      gap: 4rem;
+      align-items: center;
+    }
 
-    .trust-strip { background: var(--lime); color: #242533; }
-    .trust-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .trust-label { font-size: .75rem; text-transform: uppercase; letter-spacing: .13em; font-weight: 900; }
-    .trust-item { display: inline-flex; align-items: center; gap: .5rem; font-size: .88rem; font-weight: 800; }
-    .trust-item b { font-size: 1.1rem; }
+    .eyebrow {
+      display: inline-block;
+      color: #bde2e1;
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-weight: 800;
+      font-size: .78rem;
+      margin-bottom: 1rem;
+    }
 
-    section { padding: clamp(4.5rem, 7vw, 7rem) 0; }
-    .section-kicker { color: #7c3aed; text-transform: uppercase; letter-spacing: .15em; font-size: .73rem; font-weight: 900; margin-bottom: .8rem; }
-    .section-heading { max-width: 760px; margin-bottom: 2.6rem; }
-    .section-heading h2 { font-size: clamp(2.4rem, 4.5vw, 4.25rem); line-height: 1.02; letter-spacing: -.065em; margin-bottom: 1rem; font-weight: 900; }
-    .section-heading p { max-width: 660px; color: var(--muted); font-size: 1.08rem; margin: 0; }
-    .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .intro-card { position: relative; overflow: hidden; padding: clamp(1.8rem, 3vw, 2.4rem); border-radius: var(--radius); border: 1px solid rgba(139,92,246,.16); background: rgba(139,92,246,.04); transition: all .3s ease; }
-    .intro-card:hover { border-color: rgba(139,92,246,.28); background: rgba(139,92,246,.08); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(139,92,246,.12); }
-    .intro-card h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); margin-bottom: .8rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -.025em;
+      margin-top: 0;
+    }
+
+    h1 {
+      font-size: clamp(2.45rem, 6vw, 4.6rem);
+      margin-bottom: 1.35rem;
+      max-width: 800px;
+    }
+
+    .hero p {
+      color: #e5eaf2;
+      font-size: 1.15rem;
+      max-width: 680px;
+      margin-bottom: 1.8rem;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .8rem;
+    }
+
+    .button {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 48px;
+      padding: .7rem 1.1rem;
+      border-radius: 9px;
+      text-decoration: none;
+      font-weight: 800;
+      border: 2px solid transparent;
+    }
+
+    .button-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+
+    .button-primary:hover { background: var(--teal-dark); }
+
+    .button-secondary {
+      border-color: rgba(255,255,255,.45);
+      color: var(--white);
+    }
+
+    .button-secondary:hover { background: rgba(255,255,255,.08); }
+
+    .hero-card {
+      background: rgba(255,255,255,.08);
+      border: 1px solid rgba(255,255,255,.14);
+      padding: 1.7rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h2 { font-size: 1.2rem; margin-bottom: .75rem; }
+    .hero-card ul { margin: 0; padding-left: 1.15rem; color: #edf1f6; }
+    .hero-card li + li { margin-top: .55rem; }
+
+    section { padding: 5rem 0; }
+    section.alt { background: var(--cream); }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 2.3rem;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: .75rem;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .intro-card, .service-card, .price-card, .contact-card {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      padding: 1.6rem;
+    }
+
+    .intro-card h3 { font-size: 1.2rem; margin-bottom: .55rem; }
     .intro-card p { color: var(--muted); margin: 0; }
 
-    .promise { background: linear-gradient(135deg, var(--lime), #fbbf24); color: var(--dark); position: relative; overflow: hidden; }
-    .promise::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(rgba(0,0,0,.5) .7px, transparent .7px); background-size: 24px 24px; }
-    .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: center; position: relative; z-index: 1; }
-    .promise-content h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -.06em; margin-bottom: 1.5rem; font-weight: 900; }
-    .promise-content h2 span { display: block; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .promise-content p { font-size: 1.1rem; max-width: 500px; line-height: 1.8; margin: 0 0 1.5rem 0; font-weight: 600; color: rgba(16,16,29,.85); }
-    .promise-list { display: grid; gap: 1.2rem; }
-    .promise-item { display: flex; align-items: flex-start; gap: 1rem; }
-    .promise-item::before { content: "✓"; display: flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; background: var(--dark); color: var(--lime); border-radius: 50%; font-weight: 900; font-size: .85rem; margin-top: .2rem; }
-    .promise-item p { margin: 0; font-weight: 500; }
-    .promise-visual { position: relative; height: 320px; }
-    .promise-visual img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.15); }
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.15rem;
+    }
 
-    .portfolio { background: var(--paper); }
-    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .portfolio-card { position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); transition: all .3s ease; background: white; }
-    .portfolio-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-strong); }
-    .portfolio-card-header { position: relative; height: 240px; overflow: hidden; background: linear-gradient(135deg, rgba(139,92,246,.2), rgba(103,232,249,.2)); display: flex; align-items: center; justify-content: center; }
-    .portfolio-card-content { padding: clamp(1.8rem, 3vw, 2.4rem); }
-    .portfolio-card h3 { font-size: 1.5rem; margin-bottom: 1rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .portfolio-card p { color: var(--muted); margin: 0 0 1.5rem 0; line-height: 1.6; }
-    .portfolio-card-btn { display: inline-flex; align-items: center; gap: .5rem; color: #7c3aed; text-decoration: none; font-weight: 800; transition: all .2s ease; }
-    .portfolio-card-btn:hover { gap: 1rem; }
+    .service-card {
+      box-shadow: 0 7px 20px rgba(24,34,55,.05);
+    }
 
-    .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; width: 100%; height: 100%; padding: 1rem; }
-    .gallery-item { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 1; background: white; border: 2px solid rgba(139,92,246,.2); transition: all .3s ease; cursor: pointer; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-    .gallery-item:hover { transform: scale(1.08); border-color: var(--purple); box-shadow: 0 8px 24px rgba(139,92,246,.2); }
+    .service-card h3 {
+      font-size: 1.3rem;
+      margin-bottom: .35rem;
+    }
 
-    .website-preview { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; background: linear-gradient(135deg, #f5f1ff, #eff6ff); padding: 2rem; text-align: center; }
-    .website-preview-header { font-size: 2rem; font-weight: 900; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
-    .website-preview-desc { font-size: .95rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
-    .website-link { display: inline-flex; align-items: center; gap: .6rem; padding: .7rem 1.3rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); color: white; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: .9rem; transition: all .3s ease; box-shadow: 0 8px 20px rgba(139,92,246,.25); }
-    .website-link:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,92,246,.35); }
+    .price {
+      color: var(--teal-dark);
+      font-size: 1.25rem;
+      font-weight: 850;
+      margin: .35rem 0 .8rem;
+    }
 
-    .services { background: linear-gradient(135deg, rgba(139,92,246,.08), rgba(103,232,249,.08)); }
-    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem; }
-    .service-card { padding: clamp(1.8rem, 3vw, 2.4rem); border-radius: var(--radius); background: white; border: 1px solid rgba(139,92,246,.14); transition: all .3s ease; }
-    .service-card:hover { border-color: var(--purple); background: rgba(139,92,246,.03); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(139,92,246,.1); }
-    .service-card h3 { font-size: 1.3rem; margin-bottom: .8rem; color: #7c3aed; }
-    .service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
+    .service-card ul {
+      margin: 0;
+      padding-left: 1.2rem;
+      color: var(--muted);
+    }
 
-    .cta-section { background: linear-gradient(135deg, #10101d 0%, #151429 54%, #19162d 100%); color: white; text-align: center; position: relative; overflow: hidden; }
-    .cta-section::before { content: ""; position: absolute; inset: 0; z-index: 0; opacity: .15; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; }
-    .cta-inner { position: relative; z-index: 1; }
-    .cta-section h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.15; letter-spacing: -.06em; margin-bottom: 1.5rem; }
-    .cta-section h2 span { background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
-    .cta-section p { max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem; color: #c7c6d8; line-height: 1.8; }
+    .service-card li + li { margin-top: .25rem; }
 
-    @media (max-width: 768px) {
-      .hero-grid, .promise-grid { grid-template-columns: 1fr; }
+    .highlight {
+      margin-top: 1.4rem;
+      padding: 1.2rem 1.35rem;
+      border-left: 5px solid var(--teal);
+      background: var(--soft);
+      border-radius: 0 12px 12px 0;
+    }
+
+    .highlight strong { color: var(--navy); }
+
+    .price-table-wrap {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--white);
+      min-width: 100%;
+    }
+
+    th, td {
+  padding: 0.75rem 0.5rem;
+  text-align: left;
+  border-bottom: 1px solid var(--line);
+  word-break: normal;
+  overflow-wrap: break-word;
+    }
+
+    th {
+      background: var(--navy);
+      color: var(--white);
+      font-size: .92rem;
+    }
+
+    tr:last-child td { border-bottom: 0; }
+    td:last-child { font-weight: 800; color: var(--teal-dark);  }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .portfolio-item {
+      background: var(--white);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 7px 20px rgba(24,34,55,.05);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .portfolio-item:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow);
+    }
+
+    .portfolio-img-wrap {
+      width: 100%;
+      height: 340px;
+      background: #f0f3f6;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+
+    .portfolio-img-wrap img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+    }
+
+    .portfolio-content {
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .portfolio-tag {
+      color: var(--teal);
+      font-size: .8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      margin-bottom: .4rem;
+    }
+
+    .portfolio-content h3 {
+      font-size: 1.25rem;
+      margin-bottom: .5rem;
+    }
+
+    .portfolio-content p {
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      font-size: .95rem;
+      flex-grow: 1;
+    }
+
+    .portfolio-link {
+      color: var(--teal-dark);
+      font-weight: 800;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: .3rem;
+    }
+
+    .portfolio-link:hover {
+      text-decoration: underline;
+    }
+
+    .promise {
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 24px;
+      padding: 3rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .promise h2 { font-size: 2.1rem; }
+    .promise p { color: #e1e7ef; margin: 0; }
+    .promise ul { margin: 0; padding-left: 1.2rem; color: #e1e7ef; }
+    .promise li + li { margin-top: .5rem; }
+
+    .contact {
+      background: var(--cream);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 1.25rem;
+      align-items: stretch;
+    }
+
+    .contact-card {
+      padding: 2rem;
+    }
+
+    .contact-card h2 { font-size: 2rem; }
+
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 1.4rem 0 0;
+    }
+
+    .contact-list li + li { margin-top: .8rem; }
+
+    .contact-list a {
+      color: var(--teal-dark);
+      font-weight: 750;
+    }
+
+    .small {
+      font-size: .9rem;
+      color: var(--muted);
+    }
+
+    footer {
+      background: var(--navy-2);
+      color: #dbe1ea;
+      padding: 2rem 0;
+      font-size: .88rem;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    footer a { color: #dbe1ea; }
+
+    @media (max-width: 850px) {
+      .hero-grid, .promise, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 5rem 0 4rem; }
+      .service-grid { grid-template-columns: 1fr; }
+      .portfolio-grid { grid-template-columns: 1fr; }
+
+      .portfolio-img-wrap {
+        height: 280px;
+      }
+
+      .mobile-menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--navy-2);
+        flex-direction: column;
+        padding: 1.5rem;
+        gap: 1.2rem;
+        border-bottom: 2px solid var(--teal);
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+
+      .nav-cta {
+        display: inline-block;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      section { padding: 3.7rem 0; }
       .intro-grid { grid-template-columns: 1fr; }
-      .promise-visual { height: 240px; }
-      .nav-links { gap: .6rem; }
+      .hero-card { margin-top: .5rem; }
+      .promise { padding: 2rem; }
+      h1 { font-size: 2.65rem; }
+      
+
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>
+
 <body>
-  <a href="#main" class="skip-link">Skip to main</a>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
   <header class="site-header">
-    <nav class="nav container">
-      <a href="#" class="brand">
-        <div class="brand-mark">D</div>
-        <span>Digital<small>Support</small></span>
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="Practical Digital and Computer Support home">
+        Practical Digital Support
+        <span>Computer • Website • Digital Help</span>
       </a>
-      <div class="nav-links">
-        <a href="#my-work">Work</a>
+
+      <button class="mobile-menu-toggle" id="menuToggle" aria-label="Toggle Navigation Menu">☰</button>
+
+      <nav class="nav-links" id="navLinks" aria-label="Main navigation">
         <a href="#services">Services</a>
-        <a href="#promise">Promise</a>
-        <a href="#contact" class="nav-cta">Get in touch</a>
-      </div>
-    </nav>
+        <a href="#portfolio">Portfolio</a>
+        <a href="#prices">Prices</a>
+        <a href="#work">What I can do</a>
+        <a class="nav-cta" href="#contact">Get in touch</a>
+      </nav>
+    </div>
   </header>
 
   <main id="main">
-    <section class="hero">
-      <div class="container">
-        <div class="hero-grid">
-          <div>
-            <div class="eyebrow">Welcome</div>
-            <h1>Practical Digital <span class="gradient">Support</span> for Suffolk & Beyond</h1>
-            <p class="hero-copy">Friendly, hands-on help with computers, websites, and digital tools. Whether you're an individual getting started or a small business looking to go online, I'm here to make it simple.</p>
-            <div class="buttons">
-              <a href="#contact" class="button button-primary">Get Started</a>
-              <a href="#my-work" class="button button-secondary">See My Work</a>
-            </div>
-            <div class="hero-note">
-              <span class="dot"></span>
-              <span>Based in Suffolk, serving clients nationwide & online</span>
-            </div>
-          </div>
-          <div class="showcase">
-            <div class="showcase-glow"></div>
-            <div class="browser-card">
-              <div class="browser-bar">
-                <i></i><i></i><i></i>
-                <div class="browser-address"></div>
-              </div>
-              <div class="mock-site">
-                <div class="mock-site-top">
-                  <span>Featured</span>
-                  <span class="mock-pill"></span>
-                </div>
-                <h3>Beautiful <span>Websites</span></h3>
-                <div class="mock-lines">
-                  <b></b><b></b><b></b>
-                </div>
-                <div class="mock-mini-cards">
-                  <span></span><span></span><span></span>
-                </div>
-              </div>
-            </div>
-            <div class="print-card">
-              <div class="tiny">Print Design</div>
-              <strong>Striking Designs</strong>
-              <div class="scribble"></div>
-              <div class="tiny-bottom">Professional & Practical</div>
-            </div>
-            <div class="floating-chip">
-              <div class="chip-icon">✓</div>
-              <div>
-                <strong>Quality Assured</strong>
-                <small>Tested & Reliable</small>
-              </div>
-            </div>
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Suffolk & online</span>
+          <h1>Technology shouldn't get in the way of running your business.</h1>
+          <p>
+            Friendly, practical help with computers, websites and the everyday digital jobs
+            that small businesses and individuals don't always have time — or the patience —
+            to sort out themselves.
+          </p>
+
+          <div class="buttons">
+            <a class="button button-primary" href="#contact">Ask for help</a>
+            <a class="button button-secondary" href="#prices">See prices</a>
           </div>
         </div>
+
+        <aside class="hero-card" aria-label="What I help with">
+          <h2>Practical help. No jargon.</h2>
+          <ul>
+            <li>Computer and device problems</li>
+            <li>Website updates and small changes</li>
+            <li>Simple business websites</li>
+            <li>Business cards, flyers and print-ready artwork</li>
+            <li>Online booking and digital admin</li>
+          </ul>
+        </aside>
       </div>
     </section>
 
-    <section class="trust-strip">
-      <div class="container trust-inner">
-        <div class="trust-label">Trusted by:</div>
-        <div class="trust-item"><b>50+</b> Satisfied clients</div>
-        <div class="trust-item"><b>10+</b> Years experience</div>
-        <div class="trust-item"><b>100%</b> Support focused</div>
-      </div>
-    </section>
-
-    <section id="my-work">
+    <section>
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker">Portfolio</div>
-          <h2>My Work</h2>
-          <p>A showcase of projects ranging from beautiful websites to professional printed materials.</p>
+          <h2>What I do</h2>
+          <p>
+            I provide straightforward digital support for people who want something
+            sorted without having to become a computer expert themselves.
+          </p>
         </div>
-        <div class="portfolio-grid">
-          <!-- Printed Materials Card -->
-          <div class="portfolio-card">
-            <div class="portfolio-card-header">
-              <div class="image-gallery">
-                <div class="gallery-item">
-                  <img src="A6-Terry-001e.jpg" alt="Printed Material - A6 Design 1">
-                </div>
-                <div class="gallery-item">
-                  <img src="Business-card-003.jpeg" alt="Business Card Design">
-                </div>
-                <div class="gallery-item">
-                  <img src="LCBC-01.jpg" alt="Design Sample">
-                </div>
-                <div class="gallery-item">
-                  <img src="LCBC.jpg" alt="Design Sample">
-                </div>
-              </div>
-            </div>
-            <div class="portfolio-card-content">
-              <h3>Printed Materials</h3>
-              <p>Professional business cards, flyers, and branding materials designed to make a lasting impression. Eye-catching designs that reflect your business identity.</p>
-              <a href="#" class="portfolio-card-btn">View Gallery →</a>
-            </div>
-          </div>
 
-          <!-- Websites Card -->
-          <div class="portfolio-card">
-            <div class="portfolio-card-header">
-              <div class="website-preview">
-                <div class="website-preview-header">Leeza Cook</div>
-                <div class="website-preview-desc">Elegant website design for a professional violinist</div>
-                <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="website-link">
-                  Visit Site ↗
-                </a>
-              </div>
-            </div>
-            <div class="portfolio-card-content">
-              <h3>Websites</h3>
-              <p>Custom website design and development tailored to your business needs. From portfolios to e-commerce, creating digital experiences that convert.</p>
-              <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card-btn">Explore →</a>
-            </div>
-          </div>
+        <div class="intro-grid">
+          <article class="intro-card">
+            <h3>For small businesses</h3>
+            <p>
+              Keep your website, digital information and printed materials looking
+              professional and up to date — without the cost or complexity of a large agency.
+            </p>
+          </article>
+
+          <article class="intro-card">
+            <h3>For individuals</h3>
+            <p>
+              Get practical help with computers, phones, software, email, printers,
+              files and other everyday technology problems.
+            </p>
+          </article>
         </div>
       </div>
     </section>
 
-    <section id="promise" class="promise">
-      <div class="container">
-        <div class="promise-grid">
-          <div class="promise-content">
-            <h2><span>Keep it simple.</span> Make it work.</h2>
-            <p>Every project is built on these core principles. I focus on practical solutions that deliver real results for real people.</p>
-            <div class="promise-list">
-              <div class="promise-item">
-                <p><strong>Clarity First</strong> — No jargon, just straightforward advice and solutions you can understand.</p>
-              </div>
-              <div class="promise-item">
-                <p><strong>Reliability Matters</strong> — Systems that work consistently and support your growth.</p>
-              </div>
-              <div class="promise-item">
-                <p><strong>Your Success</strong> — Every decision is made with your goals in mind.</p>
-              </div>
-            </div>
-          </div>
-          <div class="promise-visual">
-            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(139,92,246,.3), rgba(103,232,249,.3)); border-radius: 18px; display: flex; align-items: center; justify-content: center; color: var(--dark); font-size: 1.2rem; text-align: center; padding: 2rem;">
-              <span>Professional. Practical. Personal.</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="services">
+    <section class="alt" id="services">
       <div class="container">
         <div class="section-heading">
-          <div class="section-kicker">Support</div>
           <h2>Services</h2>
-          <p>Everything you need to succeed in the digital world.</p>
+          <p>
+            Most small jobs are straightforward. Where a job is larger, I'll agree
+            the scope and price with you before starting.
+          </p>
         </div>
-        <div class="services-grid">
-          <div class="service-card">
-            <h3>💻 Computer Support</h3>
-            <p>Help with software, troubleshooting, file management, and keeping your systems secure and running smoothly.</p>
-          </div>
-          <div class="service-card">
-            <h3>🌐 Website Design</h3>
-            <p>Custom website design that showcases your business and works beautifully across all devices.</p>
-          </div>
-          <div class="service-card">
-            <h3>🎨 Branding & Print</h3>
-            <p>Professional printed materials — business cards, flyers, and branding that makes you stand out.</p>
-          </div>
-          <div class="service-card">
-            <h3>📱 Digital Guidance</h3>
-            <p>Training and support to help you navigate digital tools with confidence.</p>
-          </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <h3>Computer & Technology Help</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>PC and laptop setup</li>
+              <li>Software installation and configuration</li>
+              <li>Email, printer and Wi-Fi problems</li>
+              <li>Smartphone and tablet assistance</li>
+              <li>File organisation and backups</li>
+              <li>General troubleshooting</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Updates</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>Change text and images</li>
+              <li>Add events, services or sections</li>
+              <li>Update links and contact information</li>
+              <li>Photograph and media updates</li>
+              <li>Small layout changes</li>
+              <li>General website tidy-ups</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Small Website Changes</h3>
+            <div class="price">From £40</div>
+            <ul>
+              <li>Fixed-price work where the job is clearly defined</li>
+              <li>New sections or service information</li>
+              <li>Events and calendar additions</li>
+              <li>Multiple small amendments</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Simple Business Website</h3>
+            <div class="price">From £400</div>
+            <ul>
+              <li>Modern, mobile-friendly design</li>
+              <li>Home, About and Services sections</li>
+              <li>Gallery and contact information</li>
+              <li>Enquiry/contact form</li>
+              <li>Social-media links</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Website Care</h3>
+            <div class="price">£40 per month</div>
+            <ul>
+              <li>Minor text and image changes</li>
+              <li>Small content updates</li>
+              <li>General website assistance</li>
+              <li>Up to 1 hour of minor changes per month</li>
+              <li>Larger changes quoted separately</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Business Cards & Print Design</h3>
+            <div class="price">From £35</div>
+            <ul>
+              <li>Business card design</li>
+              <li>Flyers, leaflets and posters</li>
+              <li>Professional layout</li>
+              <li>Print-ready artwork supplied</li>
+              <li>Printing charged separately</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Digital Business Support</h3>
+            <div class="price">£30 per hour</div>
+            <ul>
+              <li>Online booking systems</li>
+              <li>Google services</li>
+              <li>Online forms</li>
+              <li>Basic spreadsheets</li>
+              <li>Website and social-media assistance</li>
+              <li>General “How do I do this?” problems</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <h3>Something else?</h3>
+            <div class="price">Just ask</div>
+            <ul>
+              <li>If it's computer-related, I may be able to help.</li>
+              <li>I'll explain what is involved.</li>
+              <li>You'll know the cost before substantial work begins.</li>
+              <li>No complicated quotation process.</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="highlight">
+          <strong>No surprise bills.</strong>
+          For small jobs I'll tell you the price before starting. If a job becomes
+          substantially bigger than expected, I'll explain the situation before doing
+          additional work.
         </div>
       </div>
     </section>
 
-    <section id="contact" class="cta-section">
-      <div class="container cta-inner">
-        <h2>Ready to get <span>started?</span></h2>
-        <p>Let's work together to bring your digital ideas to life. Whether it's a quick question or a full project, I'm here to help.</p>
-        <div class="buttons" style="justify-content: center;">
-          <a href="mailto:hello@example.com" class="button button-primary">Get in Touch</a>
-          <a href="tel:+441234567890" class="button button-secondary">Call Me</a>
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Recent Work & Portfolio</h2>
+          <p>
+            Examples of print-ready designs and live website projects designed and developed for clients.
+          </p>
         </div>
+
+        <div class="portfolio-grid">
+
+          <!-- Website Example -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <svg width="100" height="80" viewBox="0 0 24 24" fill="none" stroke="var(--teal)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Web Design & Build</span>
+              <h3>Leeza Cook - Professional Violinist</h3>
+              <p>A sleek, elegant responsive website created for professional violinist Leeza Cook, highlighting performances, sound clips, and bookings.</p>
+              <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="portfolio-link">
+                Visit Website &rarr;
+              </a>
+            </div>
+          </article>
+   
+
+          <!-- Business Card -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="LCBC.jpg" alt="Leeza Cook - Violin Tutor Business Card Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>Business Card Design</h3>
+              <p>Clean, professional double-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
+            </div>
+          </article>
+
+          <!-- Business Card -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="LCBC-01.jpg" alt="Leeza Cook - Violin Tutor Business Card Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>Business Card Design</h3>
+              <p>Clean, professional double-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
+            </div>
+          </article>
+
+          <!-- Business Card -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="Business-card-003.jpeg" alt="Terry's Outdoor & Property Maintenance Business Card Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>Business Card Design</h3>
+              <p>Clean, professional single-sided business card artwork prepared and formatted for high-quality commercial printing.</p>
+            </div>
+          </article>
+          
+          <!-- A6 Leaflet -->
+          <article class="portfolio-item">
+            <div class="portfolio-img-wrap">
+              <img src="A6-Terry-001e.jpg" alt="Terry's Outdoor and Property Maintenance Services A6 Leaflet Design" loading="lazy">
+            </div>
+            <div class="portfolio-content">
+              <span class="portfolio-tag">Print Design</span>
+              <h3>A6 Promotional Leaflet</h3>
+              <p>Eye-catching promotional flyer design for outdoor and property maintenance services, structured with clear service highlights and contact details.</p>
+            </div>
+          </article>
+          
+        </div>
+      </div>
+    </section>
+
+    <section id="prices" class="alt">
+      <div class="container">
+        <div class="section-heading">
+          <h2>Introductory prices</h2>
+          <p>
+            Simple pricing while I build my customer base. Third-party costs such as
+            hosting, domains, printing and paid software are not included unless stated.
+          </p>
+        </div>
+
+        <div class="price-table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Service</th>
+                <th>Introductory price</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>Computer / technology help</td><td>£30/hour</td></tr>
+              <tr><td>Website updates</td><td>£30/hour</td></tr>
+              <tr><td>Digital business support</td><td>£30/hour</td></tr>
+              <tr><td>Business card design</td><td>From £35</td></tr>
+              <tr><td>Flyer / leaflet / poster design</td><td>From £45</td></tr>
+              <tr><td>Small website changes</td><td>From £40</td></tr>
+              <tr><td>Website maintenance</td><td>£40/month</td></tr>
+              <tr><td>Simple business website</td><td>From £400</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="container">
+        <div class="section-heading">
+          <h2>What I can help you with</h2>
+          <p>
+            A few examples of the sort of practical work this service is designed for.
+          </p>
+        </div>
+
+        <div class="portfolio-grid">
+          <article class="portfolio-card">
+            <!-- <div class="number">01</div> -->
+            <h3>Websites</h3>
+            <p>
+              Build a simple site for a local business, or keep an existing site
+              updated as services, photographs and information change.
+            </p>
+          </article>
+
+          <article class="portfolio-card">
+            <!-- <div class="number">02</div> -->
+            <h3>Printed materials</h3>
+            <p>
+              Turn your business information into clean, professional business cards,
+              flyers, leaflets or posters ready for printing.
+            </p>
+          </article>
+
+          <article class="portfolio-card">
+            <!-- <div class="number">03</div> -->
+            <h3>Everyday technology</h3>
+            <p>
+              Solve those annoying computer, phone, software, email, printer or
+              online-service problems that keep getting put off.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="promise">
+          <div>
+            <h2>Keep it simple.</h2>
+            <p>
+              You don't need to know the technical terminology. Tell me what you
+              want to achieve, and we'll work out the simplest way to get there.
+            </p>
+          </div>
+          <ul>
+            <li>Clear, straightforward advice</li>
+            <li>Agreed prices for defined jobs</li>
+            <li>No unnecessary technical jargon</li>
+            <li>Practical solutions for real-world problems</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="container contact-grid">
+        <div class="contact-card">
+          <h2>Need something sorted?</h2>
+          <p>
+            Tell me what you're trying to do, what isn't working, or what you'd
+            like to improve. For larger jobs, I'll discuss the requirements and
+            agree a price with you before starting.
+          </p>
+
+          <div class="buttons" style="margin-top:1.4rem;">
+            <a class="button button-primary" href="mailto:mb856188@gmail.com?subject=Digital%20Support%20Enquiry">Email me</a>
+            <a class="button" style="border:2px solid var(--navy); color:var(--navy);" href="tel:+447401374656">Call me</a>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h2>Contact</h2>
+          <ul class="contact-list">
+            <li><strong>Email</strong><br><a href="mailto:mb856188@gmail.com">mb856188@gmail.com</a></li>
+            <li><strong>Telephone</strong><br><a href="tel:+447401374656">07401 374656</a></li>
+            <li><strong>Area</strong><br>Suffolk & online</li>
+          </ul>
+          <p class="small" style="margin-top:1.5rem;">
+            Introductory prices are subject to confirmation before work begins.
+          </p>
+        </aside>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© 2026 Practical Digital Support</div>
+      <div><a href="#top">Back to top</a></div>
+    </div>
+  </footer>
+
+  <script>
+    // Toggle Mobile Navigation Menu
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+
+    menuToggle.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+    });
+
+    // Close menu when clicking a link on mobile
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+      });
+    });
+  </script>
 </body>
 </html>
