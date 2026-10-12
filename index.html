@@ -51,7 +51,8 @@
     }
     .nav { min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 1.4rem; }
     .brand { display: inline-flex; align-items: center; gap: .8rem; text-decoration: none; font-weight: 850; letter-spacing: -.04em; line-height: 1.05; }
-    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; font-size: 1.25rem; box-shadow: 0 7px 25px rgba(139,92,246,.35); }
+    .brand-mark { display: grid; place-items: center; width: 42px; height: 42px; border-radius: 14px; background: linear-gradient(135deg, var(--purple), var(--pink)); color: white; font-size: 1.25rem; font-weight: 900; }
+    .brand span { display: inline-block; }
     .brand span small { display: block; margin-top: .32rem; color: #b9b8cc; font-size: .68rem; font-weight: 650; letter-spacing: .09em; text-transform: uppercase; }
     .nav-links { display: flex; align-items: center; gap: clamp(.8rem, 2vw, 1.7rem); font-size: .9rem; font-weight: 650; }
     .nav-links a { text-decoration: none; color: #d9d8e8; transition: color .2s ease; }
@@ -67,17 +68,17 @@
         linear-gradient(135deg, #10101d 0%, #151429 54%, #19162d 100%);
       color: white; padding: clamp(5.3rem, 9vw, 8.5rem) 0 clamp(5rem, 8vw, 7.5rem);
     }
-    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; mask-image: linear-gradient(90deg, transparent, black 50%, black); }
-    .hero::after { content: ""; position: absolute; z-index: -1; width: 420px; height: 420px; right: -180px; bottom: -270px; border: 1px solid rgba(217,249,157,.22); border-radius: 50%; box-shadow: 0 0 0 45px rgba(217,249,157,.025), 0 0 0 90px rgba(217,249,157,.02); }
+    .hero::before { content: ""; position: absolute; inset: 0; z-index: -1; opacity: .2; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; }
+    .hero::after { content: ""; position: absolute; z-index: -1; width: 420px; height: 420px; right: -180px; bottom: -270px; border: 1px solid rgba(217,249,157,.22); border-radius: 50%; box-shadow: 0 0 0 42px rgba(139,92,246,.03); }
     .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; gap: clamp(2rem, 5vw, 5rem); align-items: center; }
-    .eyebrow { display: inline-flex; align-items: center; gap: .65rem; color: var(--cyan); font-size: .75rem; text-transform: uppercase; letter-spacing: .17em; font-weight: 850; margin-bottom: 1.35rem; }
+    .eyebrow { display: inline-flex; align-items: center; gap: .65rem; color: var(--cyan); font-size: .75rem; text-transform: uppercase; letter-spacing: .17em; font-weight: 850; margin-bottom: 1.3rem; }
     .eyebrow::before { content: ""; width: 26px; height: 2px; background: var(--cyan); }
     h1, h2, h3, p { margin-top: 0; }
     h1 { max-width: 760px; margin-bottom: 1.35rem; font-size: clamp(3.2rem, 6.2vw, 6.1rem); line-height: .98; letter-spacing: -.075em; font-weight: 900; }
     h1 .gradient { display: inline-block; color: transparent; background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, var(--pink)); -webkit-background-clip: text; background-clip: text; }
     .hero-copy { max-width: 610px; color: #c7c6d8; font-size: clamp(1.03rem, 1.5vw, 1.2rem); line-height: 1.8; margin-bottom: 2rem; }
     .buttons { display: flex; flex-wrap: wrap; gap: .8rem; align-items: center; }
-    .button { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; min-height: 52px; padding: .82rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 850; border: 1px solid transparent; transition: transform .2s ease, box-shadow .2s ease, background .2s ease; }
+    .button { display: inline-flex; justify-content: center; align-items: center; gap: .65rem; min-height: 52px; padding: .82rem 1.25rem; border-radius: 999px; text-decoration: none; font-weight: 850; transition: transform .2s ease, background-color .2s ease, border-color .2s ease; }
     .button:hover { transform: translateY(-3px); }
     .button-primary { color: var(--dark); background: var(--lime); box-shadow: 0 8px 30px rgba(217,249,157,.12); }
     .button-primary:hover { background: white; box-shadow: 0 12px 35px rgba(217,249,157,.2); }
@@ -86,10 +87,9 @@
     .hero-note { display: flex; align-items: center; gap: .65rem; margin-top: 1.7rem; color: #aeadc2; font-size: .84rem; }
     .hero-note .dot { width: 8px; height: 8px; background: var(--lime); border-radius: 50%; box-shadow: 0 0 0 5px rgba(217,249,157,.1); }
 
-    /* Decorative, CSS-built portfolio collage: no extra image files required */
     .showcase { min-height: 450px; position: relative; display: grid; place-items: center; perspective: 1000px; }
     .showcase-glow { position: absolute; width: 76%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(circle, rgba(139,92,246,.36), rgba(139,92,246,.06) 48%, transparent 70%); filter: blur(10px); }
-    .browser-card { position: absolute; width: min(100%, 420px); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; overflow: hidden; background: #f8f7ff; color: #201c35; box-shadow: 0 32px 90px rgba(0,0,0,.38); transform: rotate(-5deg) translate(-10px, 5px); animation: floatA 7s ease-in-out infinite; }
+    .browser-card { position: absolute; width: min(100%, 420px); border: 1px solid rgba(255,255,255,.18); border-radius: 18px; overflow: hidden; background: #f8f7ff; color: #201c35; box-shadow: 0 30px 70px rgba(11,9,23,.28); transform: rotate(-5deg); }
     .browser-bar { height: 34px; padding: 0 13px; display: flex; align-items: center; gap: 5px; background: #e9e7f3; }
     .browser-bar i { width: 7px; height: 7px; border-radius: 50%; background: #c1bdd2; }
     .browser-address { margin-left: 9px; height: 16px; flex: 1; border-radius: 5px; background: rgba(255,255,255,.8); }
@@ -107,12 +107,12 @@
     .mock-mini-cards span { height: 62px; border-radius: 8px; background: linear-gradient(135deg, #c4b5fd, #fbcfe8); }
     .mock-mini-cards span:nth-child(2) { background: linear-gradient(135deg, #a5f3fc, #d9f99d); }
     .mock-mini-cards span:nth-child(3) { background: linear-gradient(135deg, #fed7aa, #f9a8d4); }
-    .print-card { position: absolute; right: -2%; bottom: 3%; width: 185px; aspect-ratio: .72; padding: 15px; color: #fff; border-radius: 13px; background: linear-gradient(150deg, #fa78b8, #7c3aed 75%); box-shadow: 0 25px 55px rgba(0,0,0,.35); transform: rotate(9deg); animation: floatB 8s ease-in-out infinite; }
+    .print-card { position: absolute; right: -2%; bottom: 3%; width: 185px; aspect-ratio: .72; padding: 15px; color: #fff; border-radius: 13px; background: linear-gradient(150deg, #fa78b8, #7c3aed); box-shadow: 0 22px 36px rgba(92,40,151,.18); transform: rotate(12deg); }
     .print-card .tiny { font-size: 8px; font-weight: 900; letter-spacing: .16em; text-transform: uppercase; opacity: .8; }
     .print-card strong { display: block; margin-top: 35px; font-size: 1.5rem; line-height: .95; letter-spacing: -.06em; }
     .print-card .scribble { margin-top: 16px; height: 3px; width: 48px; background: var(--lime); border-radius: 4px; }
     .print-card .tiny-bottom { position: absolute; bottom: 14px; left: 15px; font-size: 8px; letter-spacing: .08em; }
-    .floating-chip { position: absolute; left: -1%; bottom: 8%; display: flex; align-items: center; gap: .65rem; padding: .8rem 1rem; border-radius: 15px; background: rgba(28,27,49,.9); border: 1px solid rgba(255,255,255,.15); box-shadow: 0 15px 40px rgba(0,0,0,.25); color: white; transform: rotate(-4deg); animation: floatB 6s ease-in-out infinite; }
+    .floating-chip { position: absolute; left: -1%; bottom: 8%; display: flex; align-items: center; gap: .65rem; padding: .8rem 1rem; border-radius: 15px; background: rgba(28,27,49,.9); border: 1px solid rgba(255,255,255,.12); color: white; box-shadow: 0 12px 30px rgba(14,11,25,.18); animation: floatB 7s ease-in-out infinite; }
     .chip-icon { display: grid; place-items: center; width: 34px; height: 34px; border-radius: 10px; color: var(--dark); background: var(--cyan); font-weight: 900; }
     .floating-chip strong { display: block; font-size: .78rem; }
     .floating-chip small { display: block; font-size: .68rem; color: #b9b8cb; }
@@ -131,7 +131,7 @@
     .section-heading h2 { font-size: clamp(2.4rem, 4.5vw, 4.25rem); line-height: 1.02; letter-spacing: -.065em; margin-bottom: 1rem; font-weight: 900; }
     .section-heading p { max-width: 660px; color: var(--muted); font-size: 1.08rem; margin: 0; }
     .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .intro-card { position: relative; overflow: hidden; padding: clamp(1.7rem, 3vw, 2.5rem); border-radius: var(--radius); background: white; border: 1px solid var(--line); box-shadow: 0 8px 35px rgba(33,25,58,.035); }
+    .intro-card { position: relative; overflow: hidden; padding: clamp(1.7rem, 3vw, 2.5rem); border-radius: var(--radius); background: white; border: 1px solid var(--line); box-shadow: 0 8px 35px rgba(42,24,72,.05); }
     .intro-card::after { content: ""; position: absolute; width: 120px; height: 120px; right: -50px; bottom: -58px; border-radius: 50%; background: var(--wash, #e9d5ff); opacity: .7; }
     .intro-card:first-child { --wash: #d9f99d; }
     .intro-card:last-child { --wash: #a5f3fc; }
@@ -141,7 +141,7 @@
 
     .services-section { background: #f0eff7; }
     .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .service-card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem; border-radius: 20px; background: white; border: 1px solid rgba(41,34,67,.08); box-shadow: 0 8px 25px rgba(31,25,55,.035); transition: transform .25s ease, box-shadow .25s ease; }
+    .service-card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem; border-radius: 20px; background: white; border: 1px solid rgba(41,34,67,.08); box-shadow: 0 10px 30px rgba(31,25,55,.04); transition: transform .22s ease, box-shadow .22s ease; }
     .service-card:hover { transform: translateY(-6px); box-shadow: 0 22px 45px rgba(31,25,55,.1); }
     .service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, linear-gradient(90deg,var(--purple),var(--pink))); }
     .service-card:nth-child(2) { --accent: linear-gradient(90deg,#06b6d4,#67e8f9); }
@@ -181,41 +181,102 @@
 
     .work-section { background: var(--paper); }
     .portfolio-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1.1rem; align-items: stretch; }
-    .portfolio-card { position: relative; min-height: 310px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 1.55rem; border-radius: 24px; border: 1px solid rgba(35,29,55,.08); background: white; box-shadow: 0 10px 35px rgba(30,24,55,.05); transition: transform .25s ease, box-shadow .25s ease; }
+    .portfolio-card { position: relative; min-height: 310px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 1.55rem; border-radius: 24px; border: 1px solid rgba(33, 24, 59, .08); box-shadow: 0 12px 35px rgba(20,14,38,.05); transition: transform .22s ease, box-shadow .22s ease; }
     .portfolio-card:hover { transform: translateY(-6px); box-shadow: 0 25px 50px rgba(30,24,55,.12); }
-    .portfolio-card:first-child { background: #e9e3ff; }
-    .portfolio-card:nth-child(2) { background: #ffeadc; }
-    .portfolio-card:nth-child(3) { background: #ddf8f9; }
+    .portfolio-card-web { background: linear-gradient(180deg, #f4ebff 0%, #f9f3ff 100%); }
+    .portfolio-card-print { background: linear-gradient(180deg, #fff4e7 0%, #ffefe1 100%); }
+    .portfolio-card-tech { background: linear-gradient(180deg, #e8fbff 0%, #effdff 100%); }
     .portfolio-card .number { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .45rem; color: #5b21b6; font-size: .74rem; font-weight: 950; letter-spacing: .12em; }
     .portfolio-card h3 { position: relative; z-index: 1; font-size: 1.7rem; letter-spacing: -.05em; margin: 0 0 .65rem; }
     .portfolio-card p { position: relative; z-index: 1; color: #55516a; margin: 0; max-width: 350px; }
     .portfolio-art { position: relative; height: 130px; margin: 1.2rem 0 1.4rem; }
-    .mini-browser { position: absolute; left: 4%; top: 6%; width: 76%; height: 104px; border: 5px solid rgba(255,255,255,.8); border-radius: 10px; background: #fff; box-shadow: 0 12px 20px rgba(60,37,115,.14); transform: rotate(-3deg); overflow: hidden; }
-    .mini-browser::before { content: "•••"; display: block; height: 14px; padding-left: 7px; color: #b7a8e7; font-size: 10px; line-height: 12px; background: #f3efff; }
-    .mini-browser::after { content: ""; display: block; width: 72%; height: 52px; margin: 8px auto; border-radius: 5px; background: linear-gradient(135deg,#8b5cf6 0 36%,#c4b5fd 36% 62%,#fbcfe8 62%); }
-    .mini-card-a, .mini-card-b { position: absolute; right: 0; bottom: 4px; width: 105px; height: 65px; border-radius: 8px; box-shadow: 0 8px 18px rgba(60,37,115,.16); }
-    .mini-card-a { background: linear-gradient(135deg,#1e1640,#8b5cf6); transform: rotate(8deg); }
-    .mini-card-b { right: 62px; bottom: 13px; background: linear-gradient(135deg,#f97316,#f9a8d4); transform: rotate(-8deg); }
-    .print-art { position: absolute; inset: 0; }
-    .print-art span { position: absolute; display: block; border-radius: 10px; box-shadow: 0 10px 20px rgba(102,53,24,.13); }
-    .print-art span:first-child { width: 82px; height: 112px; left: 16%; top: 4px; transform: rotate(-8deg); background: linear-gradient(160deg,#7c2d12,#fb923c); }
-    .print-art span:nth-child(2) { width: 82px; height: 112px; left: 42%; top: 12px; transform: rotate(5deg); background: linear-gradient(160deg,#4c1d95,#f472b6); }
-    .print-art span:nth-child(3) { width: 112px; height: 72px; left: 55%; top: 42px; transform: rotate(7deg); background: linear-gradient(160deg,#fff,#ffedd5); border: 5px solid white; }
+
+    .website-preview {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-top: 6px;
+    }
+    .website-window {
+      width: 100%;
+      max-width: 280px;
+      min-height: 138px;
+      border-radius: 16px;
+      background: #fffdf7;
+      border: 1px solid rgba(61, 38, 100, 0.08);
+      box-shadow: 0 18px 28px rgba(58, 33, 104, 0.12);
+      overflow: hidden;
+    }
+    .website-topbar { display: flex; align-items: center; gap: 7px; padding: 10px 12px; background: #f4efe8; border-bottom: 1px solid rgba(24,18,48,.06); }
+    .website-topbar span { width: 8px; height: 8px; border-radius: 50%; background: #d9b05d; }
+    .website-topbar span:nth-child(2) { background: #ba9cff; }
+    .website-topbar span:nth-child(3) { background: #f6b7d1; }
+    .website-header-band { padding: 9px 12px 0; }
+    .website-header-band nav {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 7px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #2b2440; }
+    .website-header-band nav .brand-pill {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 52px; height: 18px; border-radius: 999px; background: #f6db97; color: #2b2440;
+      box-shadow: inset 0 0 0 1px rgba(43,36,64,.08);
+    }
+    .website-hero-preview {
+      display: grid; grid-template-columns: 1.2fr .8fr; gap: 10px; align-items: center;
+      padding: 14px 12px 10px;
+    }
+    .website-copy small {
+      display: block; font-size: 7px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; color: #8a6a2d;
+    }
+    .website-copy h4 {
+      margin: .35rem 0 .15rem; font-size: 17px; line-height: 1; letter-spacing: -.06em; color: #241a35;
+    }
+    .website-copy p {
+      margin: 0; font-size: 7px; line-height: 1.5; color: #50486b; max-width: 130px;
+    }
+    .website-photo {
+      height: 58px; border-radius: 12px; background: linear-gradient(140deg, #2f1b39 0%, #d9b05d 42%, #f3e0b5 100%);
+      position: relative; overflow: hidden;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,.35);
+    }
+    .website-photo::before {
+      content: ""; position: absolute; inset: 12px 18px 10px 18px; border-radius: 50%; background: rgba(255,255,255,.18);
+    }
+    .website-feature-row {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding: 0 12px 12px;
+    }
+    .website-feature-row span {
+      display: block; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #f7e4ae, #f4c4d6);
+    }
+    .website-feature-row span:nth-child(2) { background: linear-gradient(135deg, #dfe2ff, #d6f8f8); }
+    .website-feature-row span:nth-child(3) { background: linear-gradient(135deg, #f7d4a9, #efd8ff); }
+
+    .print-photo-collage {
+      display: grid;
+      grid-template-columns: 1.1fr 1.1fr 1.2fr;
+      gap: 10px;
+      align-items: end;
+      padding-top: 8px;
+    }
+    .print-photo {
+      display: block; width: 100%; height: 118px; object-fit: cover; border-radius: 14px; border: 3px solid rgba(255,255,255,.75); box-shadow: 0 16px 22px rgba(77, 51, 20, 0.14); }
+    .print-photo:first-child { transform: rotate(-6deg); }
+    .print-photo:nth-child(2) { transform: rotate(4deg); }
+    .print-photo:last-child { transform: rotate(-4deg); }
     .tech-art { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .tech-art .device { display: grid; place-items: center; border: 4px solid #2c5c68; border-radius: 12px; background: linear-gradient(145deg,#fff,#baf4f6); color: #147282; font-size: 1.5rem; font-weight: 900; box-shadow: 0 10px 20px rgba(20,114,130,.12); }
+    .tech-art .device { display: grid; place-items: center; border: 4px solid #2c5c68; border-radius: 12px; background: linear-gradient(145deg,#fff,#baf4f6); color: #147282; font-size: 1.5rem; font-weight: 900; }
     .tech-art .device:first-child { width: 130px; height: 82px; transform: rotate(-5deg); }
     .tech-art .device:last-child { width: 45px; height: 75px; border-radius: 9px; transform: rotate(7deg); }
     .work-link { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: #4c1d95; font-size: .84rem; font-weight: 900; text-decoration: none; }
     .work-link:hover { text-decoration: underline; }
 
     .promise-wrap { background: var(--dark); padding: clamp(4rem, 7vw, 6.5rem) 0; }
-    .promise { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: clamp(2rem, 5vw, 4.2rem); border: 1px solid rgba(255,255,255,.12); border-radius: 30px; background: radial-gradient(circle at 90% 0%, rgba(139,92,246,.22), transparent 40%), linear-gradient(135deg,#1d1b32,#151424); color: white; }
+    .promise { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: clamp(2rem, 5vw, 4.2rem); border: 1px solid rgba(255,255,255,.08); border-radius: 28px; background: rgba(20,17,33,.7); }
     .promise::after { content: "✓"; position: absolute; right: 5%; top: -40px; color: rgba(217,249,157,.06); font-size: 17rem; line-height: 1; font-weight: 900; pointer-events: none; }
     .promise h2 { position: relative; z-index: 1; font-size: clamp(2.3rem,4vw,3.7rem); line-height: 1; letter-spacing: -.06em; margin-bottom: 1rem; }
     .promise p { position: relative; z-index: 1; color: #c8c6da; max-width: 500px; margin: 0; }
     .promise ul { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; color: #eceaf5; }
     .promise li { display: flex; gap: .8rem; align-items: flex-start; }
-    .promise li::before { content: "✓"; display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; margin-top: .12rem; border-radius: 50%; background: var(--lime); color: var(--dark); font-size: .78rem; font-weight: 950; }
+    .promise li::before { content: "✓"; display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; margin-top: .12rem; border-radius: 50%; background: var(--lime); color: var(--dark); font-weight: 900; }
     .promise li + li { margin-top: .85rem; }
 
     .contact { background: #eee9ff; }
@@ -322,7 +383,7 @@
         <div class="hero-text">
           <span class="eyebrow">Suffolk · Online · Here to help</span>
           <h1>Make digital work <span class="gradient">for you.</span></h1>
-          <p class="hero-copy">Friendly, practical help with computers, websites and the everyday digital jobs that small businesses and individuals don't always have time — or the patience — to sort out themselves.</p>
+          <p class="hero-copy">Friendly, practical help with computers, websites and the everyday digital jobs that small businesses and individuals don't always have time — or the patience — for.</p>
           <div class="buttons">
             <a class="button button-primary" href="#contact">Tell me what you need <span aria-hidden="true">↗</span></a>
             <a class="button button-secondary" href="#work">Explore what I do <span aria-hidden="true">↓</span></a>
@@ -398,13 +459,13 @@
             <div class="service-icon" aria-hidden="true">⌘</div>
             <h3>Computer &amp; Technology Help</h3>
             <div class="price">£30 per hour</div>
-            <ul><li>PC and laptop setup</li><li>Software installation and configuration</li><li>Email, printer and Wi-Fi problems</li><li>Smartphone and tablet assistance</li><li>File organisation and backups</li><li>General troubleshooting</li></ul>
+            <ul><li>PC and laptop setup</li><li>Software installation and configuration</li><li>Email, printer and Wi-Fi problems</li><li>Smartphone and tablet assistance</li><li>File organisation and backups</li></ul>
           </article>
           <article class="service-card">
             <div class="service-icon" aria-hidden="true">▣</div>
             <h3>Website Updates</h3>
             <div class="price">£30 per hour</div>
-            <ul><li>Change text and images</li><li>Add events, services or sections</li><li>Update links and contact information</li><li>Photograph and media updates</li><li>Small layout changes</li><li>General website tidy-ups</li></ul>
+            <ul><li>Change text and images</li><li>Add events, services or sections</li><li>Update links and contact information</li><li>Photograph and media updates</li><li>Small layout changes</li></ul>
           </article>
           <article class="service-card">
             <div class="service-icon" aria-hidden="true">✎</div>
@@ -434,17 +495,17 @@
             <div class="service-icon" aria-hidden="true">◎</div>
             <h3>Digital Business Support</h3>
             <div class="price">£30 per hour</div>
-            <ul><li>Online booking systems</li><li>Google services</li><li>Online forms</li><li>Basic spreadsheets</li><li>Website and social-media assistance</li><li>General “How do I do this?” problems</li></ul>
+            <ul><li>Online booking systems</li><li>Google services</li><li>Online forms</li><li>Basic spreadsheets</li><li>Website and social-media assistance</li><li>General “How do I do this?” support</li></ul>
           </article>
           <article class="service-card">
             <div class="service-icon" aria-hidden="true">＋</div>
             <h3>Something else?</h3>
             <div class="price">Just ask</div>
-            <ul><li>If it's computer-related, I may be able to help.</li><li>I'll explain what is involved.</li><li>You'll know the cost before substantial work begins.</li><li>No complicated quotation process.</li></ul>
+            <ul><li>If it's computer-related, I may be able to help.</li><li>I'll explain what is involved.</li><li>You'll know the cost before substantial work begins.</li><li>No complicated quotes or surprises.</li></ul>
           </article>
         </div>
 
-        <div class="highlight"><div><strong>No surprise bills.</strong> For small jobs I'll tell you the price before starting. If a job becomes substantially bigger than expected, I'll explain the situation before doing additional work.</div></div>
+        <div class="highlight"><div><strong>No surprise bills.</strong> For small jobs I'll tell you the price before starting. If a job becomes substantially bigger than expected, I'll explain the extra work and costs clearly before continuing.</div></div>
       </div>
     </section>
 
@@ -488,25 +549,51 @@
           <p>A few examples of the sort of practical work this service is designed for.</p>
         </div>
         <div class="portfolio-grid">
-          <article class="portfolio-card">
+          <article class="portfolio-card portfolio-card-web">
             <div>
               <div class="number">01 / WEB DESIGN</div>
-              <div class="portfolio-art" aria-hidden="true"><div class="mini-browser"></div><div class="mini-card-a"></div><div class="mini-card-b"></div></div>
+              <div class="portfolio-art website-preview" aria-label="Website design preview inspired by Leeza Cook Violinist">
+                <div class="website-window">
+                  <div class="website-topbar"><span></span><span></span><span></span></div>
+                  <div class="website-header-band">
+                    <nav><span class="brand-pill">LC</span><span>Home</span><span>About</span><span>Events</span></nav>
+                  </div>
+                  <div class="website-hero-preview">
+                    <div class="website-copy">
+                      <small>Violinist</small>
+                      <h4>Leeza Cook</h4>
+                      <p>Classical, romantic and contemporary performance with a warm, elegant feel.</p>
+                    </div>
+                    <div class="website-photo" aria-hidden="true"></div>
+                  </div>
+                  <div class="website-feature-row" aria-hidden="true">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                  </div>
+                </div>
+              </div>
               <h3>Websites</h3>
               <p>Build a simple site for a local business, or keep an existing site updated as services, photographs and information change.</p>
             </div>
             <a class="work-link" href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer">View website project <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="portfolio-card">
+
+          <article class="portfolio-card portfolio-card-print">
             <div>
               <div class="number">02 / PRINT &amp; BRANDING</div>
-              <div class="portfolio-art print-art" aria-hidden="true"><span></span><span></span><span></span></div>
+              <div class="portfolio-art print-photo-collage" aria-label="Printed materials examples">
+                <img class="print-photo" src="Business-card-003.jpeg" alt="Business card design" loading="lazy">
+                <img class="print-photo" src="A6-Terry-001e.jpg" alt="A6 flyer design" loading="lazy">
+                <img class="print-photo" src="LCBC-01.jpg" alt="Print promotional material" loading="lazy">
+              </div>
               <h3>Printed materials</h3>
               <p>Turn your business information into clean, professional business cards, flyers, leaflets or posters ready for printing.</p>
             </div>
             <a class="work-link" href="#contact">Discuss a design <span aria-hidden="true">↗</span></a>
           </article>
-          <article class="portfolio-card">
+
+          <article class="portfolio-card portfolio-card-tech">
             <div>
               <div class="number">03 / TECH SUPPORT</div>
               <div class="portfolio-art tech-art" aria-hidden="true"><div class="device">⌘</div><div class="device">✓</div></div>
