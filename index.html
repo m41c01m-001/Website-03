@@ -138,539 +138,269 @@
     .section-heading h2 { font-size: clamp(2.4rem, 4.5vw, 4.25rem); line-height: 1.02; letter-spacing: -.065em; margin-bottom: 1rem; font-weight: 900; }
     .section-heading p { max-width: 660px; color: var(--muted); font-size: 1.08rem; margin: 0; }
     .intro-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem; }
-    .intro-card { position: relative; overflow: hidden; padding: clamp(1.7rem, 3vw, 2.5rem); border-radius: var(--radius); background: white; border: 1px solid var(--line); box-shadow: 0 8px 35px rgba(42,24,72,.05); }
-    .intro-card::after { content: ""; position: absolute; width: 120px; height: 120px; right: -50px; bottom: -58px; border-radius: 50%; background: var(--wash, #e9d5ff); opacity: .7; }
-    .intro-card:first-child { --wash: #d9f99d; }
-    .intro-card:last-child { --wash: #a5f3fc; }
-    .card-symbol { display: grid; place-items: center; width: 48px; height: 48px; margin-bottom: 1.25rem; border-radius: 15px; background: #f0eaff; color: #7c3aed; font-size: 1.3rem; font-weight: 900; }
-    .intro-card h3 { font-size: 1.45rem; letter-spacing: -.04em; margin-bottom: .65rem; }
-    .intro-card p { color: var(--muted); margin: 0; max-width: 470px; }
+    .intro-card { position: relative; overflow: hidden; padding: clamp(1.8rem, 3vw, 2.4rem); border-radius: var(--radius); border: 1px solid rgba(139,92,246,.16); background: rgba(139,92,246,.04); transition: all .3s ease; }
+    .intro-card:hover { border-color: rgba(139,92,246,.28); background: rgba(139,92,246,.08); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(139,92,246,.12); }
+    .intro-card h3 { font-size: clamp(1.3rem, 2.5vw, 1.8rem); margin-bottom: .8rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .intro-card p { color: var(--muted); margin: 0; }
 
-    .services-section { background: #f0eff7; }
-    .service-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; }
-    .service-card { position: relative; overflow: hidden; display: flex; flex-direction: column; padding: 1.6rem; border-radius: 20px; background: white; border: 1px solid rgba(41,34,67,.08); box-shadow: 0 10px 30px rgba(31,25,55,.04); transition: transform .22s ease, box-shadow .22s ease; }
-    .service-card:hover { transform: translateY(-6px); box-shadow: 0 22px 45px rgba(31,25,55,.1); }
-    .service-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: var(--accent, linear-gradient(90deg,var(--purple),var(--pink))); }
-    .service-card:nth-child(2) { --accent: linear-gradient(90deg,#06b6d4,#67e8f9); }
-    .service-card:nth-child(3) { --accent: linear-gradient(90deg,#f97316,#fbbf24); }
-    .service-card:nth-child(4) { --accent: linear-gradient(90deg,#8b5cf6,#c4b5fd); }
-    .service-card:nth-child(5) { --accent: linear-gradient(90deg,#ec4899,#f9a8d4); }
-    .service-card:nth-child(6) { --accent: linear-gradient(90deg,#10b981,#d9f99d); }
-    .service-card:nth-child(7) { --accent: linear-gradient(90deg,#6366f1,#a5b4fc); }
-    .service-card:nth-child(8) { --accent: linear-gradient(90deg,#f97316,#fb7185); }
-    .service-icon { display: grid; place-items: center; width: 43px; height: 43px; margin: .2rem 0 1.15rem; border-radius: 13px; background: #f0eaff; color: #7c3aed; font-size: 1.2rem; font-weight: 900; }
-    .service-card:nth-child(2) .service-icon { background: #cffafe; color: #0e7490; }
-    .service-card:nth-child(3) .service-icon { background: #ffedd5; color: #c2410c; }
-    .service-card:nth-child(5) .service-icon { background: #fce7f3; color: #be185d; }
-    .service-card:nth-child(6) .service-icon { background: #d1fae5; color: #047857; }
-    .service-card h3 { font-size: 1.12rem; line-height: 1.2; letter-spacing: -.035em; margin-bottom: .5rem; }
-    .price { color: #6d28d9; font-size: 1.1rem; font-weight: 900; margin: .1rem 0 1rem; }
-    .service-card ul { margin: 0; padding-left: 1.1rem; color: var(--muted); font-size: .9rem; }
-    .service-card li + li { margin-top: .3rem; }
-    .highlight { display: flex; align-items: flex-start; gap: .8rem; margin-top: 1.5rem; padding: 1.2rem 1.4rem; border-radius: 16px; color: #2c2545; background: #e2f9b4; }
-    .highlight::before { content: "✓"; flex: 0 0 28px; display: grid; place-items: center; width: 28px; height: 28px; border-radius: 50%; background: #26391a; color: white; font-weight: 900; }
-    .highlight strong { display: block; }
+    .promise { background: linear-gradient(135deg, var(--lime), #fbbf24); color: var(--dark); position: relative; overflow: hidden; }
+    .promise::before { content: ""; position: absolute; inset: 0; opacity: .08; background-image: radial-gradient(rgba(0,0,0,.5) .7px, transparent .7px); background-size: 24px 24px; }
+    .promise-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 5vw, 6rem); align-items: center; position: relative; z-index: 1; }
+    .promise-content h2 { font-size: clamp(2rem, 4vw, 3.5rem); line-height: 1.1; letter-spacing: -.06em; margin-bottom: 1.5rem; font-weight: 900; }
+    .promise-content h2 span { display: block; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .promise-content p { font-size: 1.1rem; max-width: 500px; line-height: 1.8; margin: 0 0 1.5rem 0; font-weight: 600; color: rgba(16,16,29,.85); }
+    .promise-list { display: grid; gap: 1.2rem; }
+    .promise-item { display: flex; align-items: flex-start; gap: 1rem; }
+    .promise-item::before { content: "✓"; display: flex; align-items: center; justify-content: center; min-width: 32px; height: 32px; background: var(--dark); color: var(--lime); border-radius: 50%; font-weight: 900; font-size: .85rem; margin-top: .2rem; }
+    .promise-item p { margin: 0; font-weight: 500; }
+    .promise-visual { position: relative; height: 320px; }
+    .promise-visual img { width: 100%; height: 100%; object-fit: cover; border-radius: 18px; box-shadow: 0 20px 60px rgba(0,0,0,.15); }
 
-    .prices-section { background: white; }
-    .price-layout { display: grid; grid-template-columns: .72fr 1.28fr; gap: 3rem; align-items: start; }
-    .price-side-note { padding: 1.6rem; border-radius: 20px; color: white; background: linear-gradient(145deg, #21183b, #11101f); }
-    .price-side-note .big-number { color: var(--lime); font-size: 3.4rem; font-weight: 900; letter-spacing: -.08em; line-height: 1; }
-    .price-side-note h3 { margin: 1rem 0 .55rem; font-size: 1.35rem; }
-    .price-side-note p { color: #c5c1d6; font-size: .93rem; margin-bottom: 0; }
-    .price-table-wrap { overflow-x: auto; border: 1px solid var(--line); border-radius: 20px; box-shadow: var(--shadow); }
-    table { width: 100%; border-collapse: collapse; background: white; min-width: 430px; }
-    th, td { padding: 1rem 1.2rem; text-align: left; border-bottom: 1px solid var(--line); }
-    th { background: #21183b; color: white; font-size: .8rem; text-transform: uppercase; letter-spacing: .08em; }
-    tr:last-child td { border-bottom: 0; }
-    tbody tr:nth-child(even) { background: #faf9fd; }
-    tbody tr:hover { background: #f0eaff; }
-    td:last-child { font-weight: 900; color: #6d28d9; white-space: nowrap; }
+    .portfolio { background: var(--paper); }
+    .portfolio-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .portfolio-card { position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow); transition: all .3s ease; background: white; }
+    .portfolio-card:hover { transform: translateY(-8px); box-shadow: var(--shadow-strong); }
+    .portfolio-card-header { position: relative; height: 240px; overflow: hidden; background: linear-gradient(135deg, rgba(139,92,246,.2), rgba(103,232,249,.2)); display: flex; align-items: center; justify-content: center; }
+    .portfolio-card-content { padding: clamp(1.8rem, 3vw, 2.4rem); }
+    .portfolio-card h3 { font-size: 1.5rem; margin-bottom: 1rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .portfolio-card p { color: var(--muted); margin: 0 0 1.5rem 0; line-height: 1.6; }
+    .portfolio-card-btn { display: inline-flex; align-items: center; gap: .5rem; color: #7c3aed; text-decoration: none; font-weight: 800; transition: all .2s ease; }
+    .portfolio-card-btn:hover { gap: 1rem; }
 
-    .work-section { background: var(--paper); }
-    .portfolio-grid { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 1.1rem; align-items: stretch; }
-    .portfolio-card { position: relative; min-height: 310px; overflow: hidden; display: flex; flex-direction: column; justify-content: space-between; padding: 1.55rem; border-radius: 26px; border: 1px solid rgba(33, 24, 59, .08); box-shadow: 0 12px 35px rgba(20,14,38,.05); transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease; }
-    .portfolio-card::before { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(255,255,255,.30), rgba(255,255,255,0)); pointer-events: none; }
-    .portfolio-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: var(--shadow-strong); border-color: rgba(111,47,71,.12); }
-    .portfolio-card-web { background: linear-gradient(180deg, #f7f0ff 0%, #f8f4ff 100%); }
-    .portfolio-card-print { background: linear-gradient(180deg, #fff5ea 0%, #fff0dc 100%); }
-    .portfolio-card-tech { background: linear-gradient(180deg, #eefcff 0%, #f6fbff 100%); }
-    .portfolio-card .number { position: relative; z-index: 1; display: inline-flex; align-items: center; gap: .45rem; color: #5b21b6; font-size: .74rem; font-weight: 950; letter-spacing: .12em; }
-    .portfolio-card h3 { position: relative; z-index: 1; font-size: 1.7rem; letter-spacing: -.05em; margin: 0 0 .65rem; }
-    .portfolio-card p { position: relative; z-index: 1; color: #55516a; margin: 0; max-width: 350px; }
-    .portfolio-art { position: relative; height: 130px; margin: 1.2rem 0 1.4rem; }
+    .image-gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; width: 100%; height: 100%; padding: 1rem; }
+    .gallery-item { position: relative; overflow: hidden; border-radius: 12px; aspect-ratio: 1; background: white; border: 2px solid rgba(139,92,246,.2); transition: all .3s ease; cursor: pointer; }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-item:hover { transform: scale(1.08); border-color: var(--purple); box-shadow: 0 8px 24px rgba(139,92,246,.2); }
 
-    .website-preview {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding-top: 6px;
-    }
-    .website-window {
-      width: 100%;
-      max-width: 280px;
-      min-height: 138px;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #fffdf9, #fffaf4);
-      border: 1px solid rgba(61, 38, 100, 0.08);
-      box-shadow: 0 18px 28px rgba(58, 33, 104, 0.12);
-      overflow: hidden;
-      position: relative;
-      transition: transform .22s ease, box-shadow .22s ease;
-    }
-    .portfolio-card:hover .website-window { transform: translateY(-3px); box-shadow: 0 24px 30px rgba(58, 33, 104, 0.15); }
-    .website-topbar { display: flex; align-items: center; gap: 7px; padding: 10px 12px; background: #f4efe8; border-bottom: 1px solid rgba(24,18,48,.06); }
-    .website-topbar span { width: 8px; height: 8px; border-radius: 50%; background: #d9b05d; }
-    .website-topbar span:nth-child(2) { background: #a879d7; }
-    .website-topbar span:nth-child(3) { background: #f0bfcb; }
-    .website-header-band { padding: 9px 12px 0; }
-    .website-header-band nav {
-      display: flex; justify-content: space-between; align-items: center;
-      font-size: 7px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: #2b2440;
-    }
-    .website-header-band nav .brand-pill {
-      display: inline-flex; align-items: center; justify-content: center;
-      width: 52px; height: 18px; border-radius: 999px; background: linear-gradient(135deg, #f6db97, #efd29c); color: #2b2440;
-      box-shadow: inset 0 0 0 1px rgba(43,36,64,.08);
-    }
-    .website-hero-preview {
-      display: grid; grid-template-columns: 1.2fr .8fr; gap: 10px; align-items: center;
-      padding: 14px 12px 10px;
-    }
-    .website-copy small {
-      display: block; font-size: 7px; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; color: #8a6a2d;
-    }
-    .website-copy h4 {
-      margin: .35rem 0 .15rem; font-size: 17px; line-height: 1; letter-spacing: -.06em; color: #241a35;
-    }
-    .website-copy p {
-      margin: 0; font-size: 7px; line-height: 1.5; color: #50486b; max-width: 130px;
-    }
-    .website-photo {
-      height: 58px; border-radius: 12px; background: linear-gradient(140deg, #3d1c3d 0%, #9c6b2a 42%, #f0d7a0 100%);
-      position: relative; overflow: hidden;
-      box-shadow: inset 0 0 0 2px rgba(255,255,255,.35);
-    }
-    .website-photo::before {
-      content: ""; position: absolute; inset: 12px 18px 10px 18px; border-radius: 50%; background: rgba(255,255,255,.17);
-    }
-    .website-feature-row {
-      display: grid; grid-template-columns: repeat(3, 1fr); gap: 7px; padding: 0 12px 12px;
-    }
-    .website-feature-row span {
-      display: block; height: 28px; border-radius: 8px; background: linear-gradient(135deg, #f7e4ae, #f4c4d6);
-    }
-    .website-feature-row span:nth-child(2) { background: linear-gradient(135deg, #dfe2ff, #d6f8f8); }
-    .website-feature-row span:nth-child(3) { background: linear-gradient(135deg, #f7d4a9, #efd8ff); }
+    .website-preview { display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%; height: 100%; background: linear-gradient(135deg, #f5f1ff, #eff6ff); padding: 2rem; text-align: center; }
+    .website-preview-header { font-size: 2rem; font-weight: 900; background: linear-gradient(100deg, #7c3aed, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; margin-bottom: 1rem; }
+    .website-preview-desc { font-size: .95rem; color: var(--muted); margin-bottom: 1.5rem; line-height: 1.6; }
+    .website-link { display: inline-flex; align-items: center; gap: .6rem; padding: .7rem 1.3rem; background: linear-gradient(100deg, #7c3aed, var(--pink)); color: white; border-radius: 999px; text-decoration: none; font-weight: 800; font-size: .9rem; transition: all .3s ease; box-shadow: 0 8px 20px rgba(139,92,246,.25); }
+    .website-link:hover { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(139,92,246,.35); }
 
-    .print-photo-collage {
-      display: grid;
-      grid-template-columns: 1.1fr 1.1fr 1.2fr;
-      gap: 10px;
-      align-items: end;
-      padding-top: 8px;
-    }
-    .print-photo {
-      display: block; width: 100%; height: 118px; object-fit: cover; border-radius: 14px; border: 3px solid rgba(255,255,255,.75); box-shadow: 0 16px 22px rgba(77, 51, 20, 0.14); transition: transform .22s ease, filter .22s ease;
-    }
-    .portfolio-card:hover .print-photo {
-      transform: translateY(-3px) scale(1.02);
-      filter: saturate(1.08) contrast(1.03);
-    }
-    .print-photo:first-child { transform: rotate(-6deg); }
-    .print-photo:nth-child(2) { transform: rotate(4deg); }
-    .print-photo:last-child { transform: rotate(-4deg); }
-    .tech-art { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; gap: 10px; }
-    .tech-art .device { display: grid; place-items: center; border: 4px solid #2c5c68; border-radius: 12px; background: linear-gradient(145deg,#fff,#baf4f6); color: #147282; font-size: 1.5rem; font-weight: 900; }
-    .tech-art .device:first-child { width: 130px; height: 82px; transform: rotate(-5deg); }
-    .tech-art .device:last-child { width: 45px; height: 75px; border-radius: 9px; transform: rotate(7deg); }
-    .work-link { display: inline-flex; align-items: center; gap: .45rem; margin-top: 1rem; color: #4c1d95; font-size: .84rem; font-weight: 900; text-decoration: none; }
-    .work-link:hover { text-decoration: underline; }
+    .services { background: linear-gradient(135deg, rgba(139,92,246,.08), rgba(103,232,249,.08)); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 2rem; }
+    .service-card { padding: clamp(1.8rem, 3vw, 2.4rem); border-radius: var(--radius); background: white; border: 1px solid rgba(139,92,246,.14); transition: all .3s ease; }
+    .service-card:hover { border-color: var(--purple); background: rgba(139,92,246,.03); transform: translateY(-4px); box-shadow: 0 16px 40px rgba(139,92,246,.1); }
+    .service-card h3 { font-size: 1.3rem; margin-bottom: .8rem; color: #7c3aed; }
+    .service-card p { color: var(--muted); margin: 0; line-height: 1.7; }
 
-    .promise-wrap { background: var(--dark); padding: clamp(4rem, 7vw, 6.5rem) 0; }
-    .promise { position: relative; overflow: hidden; display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; padding: clamp(2rem, 5vw, 4.2rem); border: 1px solid rgba(255,255,255,.08); border-radius: 28px; background: rgba(20,17,33,.7); }
-    .promise::after { content: "✓"; position: absolute; right: 5%; top: -40px; color: rgba(217,249,157,.06); font-size: 17rem; line-height: 1; font-weight: 900; pointer-events: none; }
-    .promise h2 { position: relative; z-index: 1; font-size: clamp(2.3rem,4vw,3.7rem); line-height: 1; letter-spacing: -.06em; margin-bottom: 1rem; }
-    .promise p { position: relative; z-index: 1; color: #c8c6da; max-width: 500px; margin: 0; }
-    .promise ul { position: relative; z-index: 1; list-style: none; margin: 0; padding: 0; color: #eceaf5; }
-    .promise li { display: flex; gap: .8rem; align-items: flex-start; }
-    .promise li::before { content: "✓"; display: grid; place-items: center; flex: 0 0 24px; width: 24px; height: 24px; margin-top: .12rem; border-radius: 50%; background: var(--lime); color: var(--dark); font-weight: 900; }
-    .promise li + li { margin-top: .85rem; }
+    .cta-section { background: linear-gradient(135deg, #10101d 0%, #151429 54%, #19162d 100%); color: white; text-align: center; position: relative; overflow: hidden; }
+    .cta-section::before { content: ""; position: absolute; inset: 0; z-index: 0; opacity: .15; background-image: radial-gradient(rgba(255,255,255,.5) .7px, transparent .7px); background-size: 24px 24px; }
+    .cta-inner { position: relative; z-index: 1; }
+    .cta-section h2 { font-size: clamp(2.2rem, 4vw, 3.8rem); line-height: 1.15; letter-spacing: -.06em; margin-bottom: 1.5rem; }
+    .cta-section h2 span { background: linear-gradient(100deg, var(--cyan), #a78bfa 55%, var(--pink)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+    .cta-section p { max-width: 700px; margin: 0 auto 2.5rem; font-size: 1.1rem; color: #c7c6d8; line-height: 1.8; }
 
-    .contact { background: #eee9ff; }
-    .contact-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 1.2rem; align-items: stretch; }
-    .contact-card { padding: clamp(1.8rem,4vw,3rem); border-radius: 24px; background: white; border: 1px solid rgba(64,40,120,.09); box-shadow: 0 12px 40px rgba(57,36,107,.06); }
-    .contact-card h2 { font-size: clamp(2rem,3.7vw,3.25rem); line-height: 1; letter-spacing: -.06em; margin-bottom: 1rem; }
-    .contact-card p { color: var(--muted); }
-    .contact .button-primary { background: #21183b; color: white; }
-    .contact .button-primary:hover { background: #6d28d9; }
-    .button-dark-outline { border-color: #d8d1e9; color: #241b3b; }
-    .button-dark-outline:hover { background: #f6f3ff; }
-    .contact-list { list-style: none; padding: 0; margin: 1.5rem 0 0; }
-    .contact-list li { padding: .9rem 0; border-bottom: 1px solid #efedf5; }
-    .contact-list li:last-child { border-bottom: 0; }
-    .contact-list strong { display: block; color: #79758d; text-transform: uppercase; font-size: .72rem; letter-spacing: .12em; margin-bottom: .2rem; }
-    .contact-list a { color: #6d28d9; font-weight: 850; text-decoration-thickness: 1px; text-underline-offset: 3px; }
-    .small { font-size: .86rem; color: var(--muted); }
-    footer { background: #0c0b16; color: #aaa8bf; padding: 1.8rem 0; font-size: .86rem; }
-    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
-    .footer-brand { color: white; font-weight: 850; }
-    footer a { color: var(--lime); text-decoration: none; font-weight: 800; }
-    footer a:hover { text-decoration: underline; }
-
-    @media (max-width: 1050px) {
-      .hero-grid { grid-template-columns: 1fr .9fr; gap: 1.5rem; }
-      .showcase { min-height: 400px; }
-      .service-grid { grid-template-columns: repeat(2, 1fr); }
-      .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
-      .portfolio-card:first-child { grid-row: span 2; }
-      .price-layout { grid-template-columns: 1fr; gap: 1.5rem; }
-      .price-side-note { display: grid; grid-template-columns: auto 1fr; column-gap: 1.3rem; align-items: center; }
-      .price-side-note .big-number { grid-row: span 2; }
-      .price-side-note h3 { margin: 0 0 .35rem; }
-    }
-    @media (max-width: 760px) {
-      .nav { min-height: 70px; }
-      .nav-links { gap: .75rem; font-size: .78rem; }
-      .nav-links a:not(.nav-cta) { display: none; }
-      .hero { padding-top: 4.8rem; }
-      .hero-grid { grid-template-columns: 1fr; }
-      .showcase { min-height: 400px; margin-top: .8rem; }
-      .browser-card { width: min(90%, 420px); }
-      .print-card { right: 2%; width: 145px; }
-      .floating-chip { left: 0; }
-      .intro-grid, .promise, .contact-grid { grid-template-columns: 1fr; }
-      .promise { gap: 1.8rem; }
-      .trust-inner { justify-content: center; padding: 1.2rem 0; }
-      .trust-label { width: 100%; text-align: center; }
-      .portfolio-grid { grid-template-columns: 1fr; }
-      .portfolio-card:first-child { grid-row: auto; }
-      .portfolio-card { min-height: 280px; }
-    }
-    @media (max-width: 480px) {
-      .container { width: min(calc(100% - 1.4rem), var(--max)); }
-      .brand { gap: .55rem; font-size: .92rem; }
-      .brand-mark { width: 36px; height: 36px; border-radius: 12px; }
-      .brand span small { font-size: .58rem; }
-      .nav-links .nav-cta { padding: .58rem .75rem; font-size: .75rem; }
-      h1 { font-size: clamp(3rem, 14vw, 4.3rem); }
-      .hero-copy { font-size: 1rem; }
-      .buttons { align-items: stretch; }
-      .buttons .button { flex: 1 1 100%; }
-      .showcase { min-height: 335px; }
-      .mock-site { min-height: 205px; padding: 17px; }
-      .mock-site h3 { margin-top: 20px; }
-      .mock-mini-cards span { height: 45px; }
-      .print-card { width: 120px; bottom: 0; }
-      .print-card strong { font-size: 1.2rem; margin-top: 25px; }
-      .floating-chip { bottom: 1%; padding: .65rem .75rem; }
-      .service-grid { grid-template-columns: 1fr; }
-      .price-side-note { display: block; }
-      .price-side-note h3 { margin-top: .8rem; }
-      th, td { padding: .85rem; font-size: .9rem; }
-      .promise { padding: 1.6rem; }
-      .contact-card { padding: 1.5rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    @media (max-width: 768px) {
+      .hero-grid, .promise-grid { grid-template-columns: 1fr; }
+      .intro-grid { grid-template-columns: 1fr; }
+      .promise-visual { height: 240px; }
+      .nav-links { gap: .6rem; }
     }
   </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to main content</a>
-
+  <a href="#main" class="skip-link">Skip to main</a>
   <header class="site-header">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Practical Digital Support home">
-        <span class="brand-mark" aria-hidden="true">P<span style="color:#d9f99d">.</span></span>
-        <span>Practical Digital Support<small>Computer · Website · Digital Help</small></span>
+    <nav class="nav container">
+      <a href="#" class="brand">
+        <div class="brand-mark">D</div>
+        <span>Digital<small>Support</small></span>
       </a>
-      <nav class="nav-links" aria-label="Main navigation">
+      <div class="nav-links">
+        <a href="#my-work">Work</a>
         <a href="#services">Services</a>
-        <a href="#prices">Prices</a>
-        <a href="#work">My work</a>
-        <a class="nav-cta" href="#contact">Let's talk ↗</a>
-      </nav>
-    </div>
+        <a href="#promise">Promise</a>
+        <a href="#contact" class="nav-cta">Get in touch</a>
+      </div>
+    </nav>
   </header>
 
   <main id="main">
-    <section class="hero" id="top">
-      <div class="container hero-grid">
-        <div class="hero-text">
-          <span class="eyebrow">Suffolk · Online · Here to help</span>
-          <h1>Make digital work <span class="gradient">for you.</span></h1>
-          <p class="hero-copy">Friendly, practical help with computers, websites and the everyday digital jobs that small businesses and individuals don't always have time — or the patience — for.</p>
-          <div class="buttons">
-            <a class="button button-primary" href="#contact">Tell me what you need <span aria-hidden="true">↗</span></a>
-            <a class="button button-secondary" href="#work">Explore what I do <span aria-hidden="true">↓</span></a>
-          </div>
-          <div class="hero-note"><span class="dot" aria-hidden="true"></span> Straight answers. Practical solutions. No jargon.</div>
-        </div>
-
-        <div class="showcase" aria-label="Illustration of website design, print design and digital support">
-          <div class="showcase-glow" aria-hidden="true"></div>
-          <div class="browser-card" aria-hidden="true">
-            <div class="browser-bar"><i></i><i></i><i></i><div class="browser-address"></div></div>
-            <div class="mock-site">
-              <div class="mock-site-top"><span>Made to make an impression</span><span class="mock-pill"></span></div>
-              <h3>Good ideas.<br><span>Beautifully online.</span></h3>
-              <div class="mock-lines"><b></b><b></b><b></b></div>
-              <div class="mock-mini-cards"><span></span><span></span><span></span></div>
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
+          <div>
+            <div class="eyebrow">Welcome</div>
+            <h1>Practical Digital <span class="gradient">Support</span> for Suffolk & Beyond</h1>
+            <p class="hero-copy">Friendly, hands-on help with computers, websites, and digital tools. Whether you're an individual getting started or a small business looking to go online, I'm here to make it simple.</p>
+            <div class="buttons">
+              <a href="#contact" class="button button-primary">Get Started</a>
+              <a href="#my-work" class="button button-secondary">See My Work</a>
+            </div>
+            <div class="hero-note">
+              <span class="dot"></span>
+              <span>Based in Suffolk, serving clients nationwide & online</span>
             </div>
           </div>
-          <div class="print-card" aria-hidden="true">
-            <div class="tiny">Your brand, your way</div>
-            <strong>Stand out<br>from the<br>crowd.</strong>
-            <div class="scribble"></div>
-            <div class="tiny-bottom">DESIGN · PRINT · DIGITAL</div>
-          </div>
-          <div class="floating-chip" aria-hidden="true">
-            <span class="chip-icon">✓</span><span><strong>Problem solved.</strong><small>One less thing to worry about.</small></span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="trust-strip" aria-label="Service highlights">
-      <div class="container trust-inner">
-        <span class="trust-label">Good help, without the headache</span>
-        <span class="trust-item"><b>✳</b> Practical tech support</span>
-        <span class="trust-item"><b>✦</b> Websites that work</span>
-        <span class="trust-item"><b>✳</b> Design that stands out</span>
-      </div>
-    </div>
-
-    <section id="about">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">A human approach to technology</div>
-          <h2>Good support should make life <span style="color:#7c3aed">simpler.</span></h2>
-          <p>I provide straightforward digital support for people who want something sorted without having to become a computer expert themselves.</p>
-        </div>
-        <div class="intro-grid">
-          <article class="intro-card">
-            <div class="card-symbol" aria-hidden="true">↗</div>
-            <h3>For small businesses</h3>
-            <p>Keep your website, digital information and printed materials looking professional and up to date — without the cost or complexity of a large agency.</p>
-          </article>
-          <article class="intro-card">
-            <div class="card-symbol" aria-hidden="true">⌘</div>
-            <h3>For individuals</h3>
-            <p>Get practical help with computers, phones, software, email, printers, files and other everyday technology problems.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="services-section" id="services">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Useful skills. Straightforward service.</div>
-          <h2>What can I help you <span style="color:#7c3aed">sort out?</span></h2>
-          <p>Most small jobs are straightforward. Where a job is larger, I'll agree the scope and price with you before starting.</p>
-        </div>
-
-        <div class="service-grid">
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">⌘</div>
-            <h3>Computer &amp; Technology Help</h3>
-            <div class="price">£30 per hour</div>
-            <ul><li>PC and laptop setup</li><li>Software installation and configuration</li><li>Email, printer and Wi-Fi problems</li><li>Smartphone and tablet assistance</li><li>File organisation and backups</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">▣</div>
-            <h3>Website Updates</h3>
-            <div class="price">£30 per hour</div>
-            <ul><li>Change text and images</li><li>Add events, services or sections</li><li>Update links and contact information</li><li>Photograph and media updates</li><li>Small layout changes</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✎</div>
-            <h3>Small Website Changes</h3>
-            <div class="price">From £40</div>
-            <ul><li>Fixed-price work where the job is clearly defined</li><li>New sections or service information</li><li>Events and calendar additions</li><li>Multiple small amendments</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">✦</div>
-            <h3>Simple Business Website</h3>
-            <div class="price">From £400</div>
-            <ul><li>Modern, mobile-friendly design</li><li>Home, About and Services sections</li><li>Gallery and contact information</li><li>Enquiry/contact form</li><li>Social-media links</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">↻</div>
-            <h3>Website Care</h3>
-            <div class="price">£40 per month</div>
-            <ul><li>Minor text and image changes</li><li>Small content updates</li><li>General website assistance</li><li>Up to 1 hour of minor changes per month</li><li>Larger changes quoted separately</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">▤</div>
-            <h3>Business Cards &amp; Print Design</h3>
-            <div class="price">From £35</div>
-            <ul><li>Business card design</li><li>Flyers, leaflets and posters</li><li>Professional layout</li><li>Print-ready artwork supplied</li><li>Printing charged separately</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">◎</div>
-            <h3>Digital Business Support</h3>
-            <div class="price">£30 per hour</div>
-            <ul><li>Online booking systems</li><li>Google services</li><li>Online forms</li><li>Basic spreadsheets</li><li>Website and social-media assistance</li><li>General “How do I do this?” support</li></ul>
-          </article>
-          <article class="service-card">
-            <div class="service-icon" aria-hidden="true">＋</div>
-            <h3>Something else?</h3>
-            <div class="price">Just ask</div>
-            <ul><li>If it's computer-related, I may be able to help.</li><li>I'll explain what is involved.</li><li>You'll know the cost before substantial work begins.</li><li>No complicated quotes or surprises.</li></ul>
-          </article>
-        </div>
-
-        <div class="highlight"><div><strong>No surprise bills.</strong> For small jobs I'll tell you the price before starting. If a job becomes substantially bigger than expected, I'll explain the extra work and costs clearly before continuing.</div></div>
-      </div>
-    </section>
-
-    <section class="prices-section" id="prices">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Clear from the start</div>
-          <h2>Good work. <span style="color:#7c3aed">Fair prices.</span></h2>
-          <p>Simple pricing while I build my customer base. Third-party costs such as hosting, domains, printing and paid software are not included unless stated.</p>
-        </div>
-        <div class="price-layout">
-          <aside class="price-side-note">
-            <div class="big-number">£30</div>
-            <h3>Simple hourly pricing</h3>
-            <p>For computer help, website updates and digital business support. Fixed-price options are available for clearly defined jobs.</p>
-          </aside>
-          <div class="price-table-wrap">
-            <table>
-              <thead><tr><th>Service</th><th>Introductory price</th></tr></thead>
-              <tbody>
-                <tr><td>Computer / technology help</td><td>£30/hour</td></tr>
-                <tr><td>Website updates</td><td>£30/hour</td></tr>
-                <tr><td>Digital business support</td><td>£30/hour</td></tr>
-                <tr><td>Business card design</td><td>From £35</td></tr>
-                <tr><td>Flyer / leaflet / poster design</td><td>From £45</td></tr>
-                <tr><td>Small website changes</td><td>From £40</td></tr>
-                <tr><td>Website maintenance</td><td>£40/month</td></tr>
-                <tr><td>Simple business website</td><td>From £400</td></tr>
-              </tbody>
-            </table>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="work-section" id="work">
-      <div class="container">
-        <div class="section-heading">
-          <div class="section-kicker">Practical work. Creative thinking.</div>
-          <h2>From everyday fixes to <span style="color:#7c3aed">standout design.</span></h2>
-          <p>A few examples of the sort of practical work this service is designed for.</p>
-        </div>
-        <div class="portfolio-grid">
-          <article class="portfolio-card portfolio-card-web">
-            <div>
-              <div class="number">01 / WEB DESIGN</div>
-              <div class="portfolio-art website-preview" aria-label="Website design preview inspired by Leeza Cook Violinist">
-                <div class="website-window">
-                  <div class="website-topbar"><span></span><span></span><span></span></div>
-                  <div class="website-header-band">
-                    <nav><span class="brand-pill">LC</span><span>Home</span><span>About</span><span>Events</span></nav>
-                  </div>
-                  <div class="website-hero-preview">
-                    <div class="website-copy">
-                      <small>Violinist</small>
-                      <h4>Leeza Cook</h4>
-                      <p>Classical, romantic and contemporary performance with a warm, elegant feel.</p>
-                    </div>
-                    <div class="website-photo" aria-hidden="true"></div>
-                  </div>
-                  <div class="website-feature-row" aria-hidden="true">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
+          <div class="showcase">
+            <div class="showcase-glow"></div>
+            <div class="browser-card">
+              <div class="browser-bar">
+                <i></i><i></i><i></i>
+                <div class="browser-address"></div>
+              </div>
+              <div class="mock-site">
+                <div class="mock-site-top">
+                  <span>Featured</span>
+                  <span class="mock-pill"></span>
+                </div>
+                <h3>Beautiful <span>Websites</span></h3>
+                <div class="mock-lines">
+                  <b></b><b></b><b></b>
+                </div>
+                <div class="mock-mini-cards">
+                  <span></span><span></span><span></span>
                 </div>
               </div>
-              <h3>Websites</h3>
-              <p>Build a simple site for a local business, or keep an existing site updated as services, photographs and information change.</p>
             </div>
-            <a class="work-link" href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer">View website project <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="portfolio-card portfolio-card-print">
-            <div>
-              <div class="number">02 / PRINT &amp; BRANDING</div>
-              <div class="portfolio-art print-photo-collage" aria-label="Printed materials examples">
-                <img class="print-photo" src="Business-card-003.jpeg" alt="Business card design" loading="lazy">
-                <img class="print-photo" src="A6-Terry-001e.jpg" alt="A6 flyer design" loading="lazy">
-                <img class="print-photo" src="LCBC-01.jpg" alt="Print promotional material" loading="lazy">
+            <div class="print-card">
+              <div class="tiny">Print Design</div>
+              <strong>Striking Designs</strong>
+              <div class="scribble"></div>
+              <div class="tiny-bottom">Professional & Practical</div>
+            </div>
+            <div class="floating-chip">
+              <div class="chip-icon">✓</div>
+              <div>
+                <strong>Quality Assured</strong>
+                <small>Tested & Reliable</small>
               </div>
-              <h3>Printed materials</h3>
-              <p>Turn your business information into clean, professional business cards, flyers, leaflets or posters ready for printing.</p>
             </div>
-            <a class="work-link" href="#contact">Discuss a design <span aria-hidden="true">↗</span></a>
-          </article>
-
-          <article class="portfolio-card portfolio-card-tech">
-            <div>
-              <div class="number">03 / TECH SUPPORT</div>
-              <div class="portfolio-art tech-art" aria-hidden="true"><div class="device">⌘</div><div class="device">✓</div></div>
-              <h3>Everyday technology</h3>
-              <p>Solve those annoying computer, phone, software, email, printer or online-service problems that keep getting put off.</p>
-            </div>
-            <a class="work-link" href="#contact">Get practical help <span aria-hidden="true">↗</span></a>
-          </article>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="promise-wrap">
+    <section class="trust-strip">
+      <div class="container trust-inner">
+        <div class="trust-label">Trusted by:</div>
+        <div class="trust-item"><b>50+</b> Satisfied clients</div>
+        <div class="trust-item"><b>10+</b> Years experience</div>
+        <div class="trust-item"><b>100%</b> Support focused</div>
+      </div>
+    </section>
+
+    <section id="my-work">
       <div class="container">
-        <div class="promise">
-          <div>
-            <div class="section-kicker" style="color:#d9f99d">The promise</div>
-            <h2>Keep it simple.<br>Make it work.</h2>
-            <p>You don't need to know the technical terminology. Tell me what you want to achieve, and we'll work out the simplest way to get there.</p>
+        <div class="section-heading">
+          <div class="section-kicker">Portfolio</div>
+          <h2>My Work</h2>
+          <p>A showcase of projects ranging from beautiful websites to professional printed materials.</p>
+        </div>
+        <div class="portfolio-grid">
+          <!-- Printed Materials Card -->
+          <div class="portfolio-card">
+            <div class="portfolio-card-header">
+              <div class="image-gallery">
+                <div class="gallery-item">
+                  <img src="A6-Terry-001e.jpg" alt="Printed Material - A6 Design 1">
+                </div>
+                <div class="gallery-item">
+                  <img src="Business-card-003.jpeg" alt="Business Card Design">
+                </div>
+                <div class="gallery-item">
+                  <img src="LCBC-01.jpg" alt="Design Sample">
+                </div>
+                <div class="gallery-item">
+                  <img src="LCBC.jpg" alt="Design Sample">
+                </div>
+              </div>
+            </div>
+            <div class="portfolio-card-content">
+              <h3>Printed Materials</h3>
+              <p>Professional business cards, flyers, and branding materials designed to make a lasting impression. Eye-catching designs that reflect your business identity.</p>
+              <a href="#" class="portfolio-card-btn">View Gallery →</a>
+            </div>
           </div>
-          <ul>
-            <li>Clear, straightforward advice</li>
-            <li>Agreed prices for defined jobs</li>
-            <li>No unnecessary technical jargon</li>
-            <li>Practical solutions for real-world problems</li>
-          </ul>
+
+          <!-- Websites Card -->
+          <div class="portfolio-card">
+            <div class="portfolio-card-header">
+              <div class="website-preview">
+                <div class="website-preview-header">Leeza Cook</div>
+                <div class="website-preview-desc">Elegant website design for a professional violinist</div>
+                <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="website-link">
+                  Visit Site ↗
+                </a>
+              </div>
+            </div>
+            <div class="portfolio-card-content">
+              <h3>Websites</h3>
+              <p>Custom website design and development tailored to your business needs. From portfolios to e-commerce, creating digital experiences that convert.</p>
+              <a href="https://leezacookviolinist.com/" target="_blank" rel="noopener noreferrer" class="portfolio-card-btn">Explore →</a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="contact-card">
-          <div class="section-kicker">Your next step</div>
-          <h2>Need something <span style="color:#7c3aed">sorted?</span></h2>
-          <p>Tell me what you're trying to do, what isn't working, or what you'd like to improve. For larger jobs, I'll discuss the requirements and agree a price with you before starting.</p>
-          <div class="buttons" style="margin-top:1.4rem;">
-            <a class="button button-primary" href="mailto:mb856188@gmail.com?subject=Digital%20Support%20Enquiry">Email me ↗</a>
-            <a class="button button-dark-outline" href="tel:+447401374656">Call me ☎</a>
+    <section id="promise" class="promise">
+      <div class="container">
+        <div class="promise-grid">
+          <div class="promise-content">
+            <h2><span>Keep it simple.</span> Make it work.</h2>
+            <p>Every project is built on these core principles. I focus on practical solutions that deliver real results for real people.</p>
+            <div class="promise-list">
+              <div class="promise-item">
+                <p><strong>Clarity First</strong> — No jargon, just straightforward advice and solutions you can understand.</p>
+              </div>
+              <div class="promise-item">
+                <p><strong>Reliability Matters</strong> — Systems that work consistently and support your growth.</p>
+              </div>
+              <div class="promise-item">
+                <p><strong>Your Success</strong> — Every decision is made with your goals in mind.</p>
+              </div>
+            </div>
+          </div>
+          <div class="promise-visual">
+            <div style="width: 100%; height: 100%; background: linear-gradient(135deg, rgba(139,92,246,.3), rgba(103,232,249,.3)); border-radius: 18px; display: flex; align-items: center; justify-content: center; color: var(--dark); font-size: 1.2rem; text-align: center; padding: 2rem;">
+              <span>Professional. Practical. Personal.</span>
+            </div>
           </div>
         </div>
-        <aside class="contact-card">
-          <h2>Let's talk.</h2>
-          <p>Friendly help is only a message away.</p>
-          <ul class="contact-list">
-            <li><strong>Email</strong><a href="mailto:mb856188@gmail.com">mb856188@gmail.com</a></li>
-            <li><strong>Telephone</strong><a href="tel:+447401374656">07401 374656</a></li>
-            <li><strong>Area</strong>Suffolk &amp; online</li>
-          </ul>
-          <p class="small" style="margin-top:1.2rem;">Introductory prices are subject to confirmation before work begins.</p>
-        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-heading">
+          <div class="section-kicker">Support</div>
+          <h2>Services</h2>
+          <p>Everything you need to succeed in the digital world.</p>
+        </div>
+        <div class="services-grid">
+          <div class="service-card">
+            <h3>💻 Computer Support</h3>
+            <p>Help with software, troubleshooting, file management, and keeping your systems secure and running smoothly.</p>
+          </div>
+          <div class="service-card">
+            <h3>🌐 Website Design</h3>
+            <p>Custom website design that showcases your business and works beautifully across all devices.</p>
+          </div>
+          <div class="service-card">
+            <h3>🎨 Branding & Print</h3>
+            <p>Professional printed materials — business cards, flyers, and branding that makes you stand out.</p>
+          </div>
+          <div class="service-card">
+            <h3>📱 Digital Guidance</h3>
+            <p>Training and support to help you navigate digital tools with confidence.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="cta-section">
+      <div class="container cta-inner">
+        <h2>Ready to get <span>started?</span></h2>
+        <p>Let's work together to bring your digital ideas to life. Whether it's a quick question or a full project, I'm here to help.</p>
+        <div class="buttons" style="justify-content: center;">
+          <a href="mailto:hello@example.com" class="button button-primary">Get in Touch</a>
+          <a href="tel:+441234567890" class="button button-secondary">Call Me</a>
+        </div>
       </div>
     </section>
   </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <div><span class="footer-brand">Practical Digital Support</span> · © 2026</div>
-      <div>Local support. Online flexibility. <a href="#top">Back to top ↑</a></div>
-    </div>
-  </footer>
 </body>
 </html>
